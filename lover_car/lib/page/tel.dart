@@ -28,11 +28,13 @@ class _TelState extends State<Tel> {
                 )),
           ),
           buildButton(),
+          buildButton0(),
           buildButton1(),
           buildButton2(),
           buildButton3(),
           buildButton4(),
           buildButton5(),
+          buildButton05(),
           Container(
             decoration: BoxDecoration(color: Colors.orange.shade700),
             height: 40,
@@ -56,6 +58,7 @@ class _TelState extends State<Tel> {
           ),
           buildButton9(),
           buildButton10(),
+          buildButton11(),
           Container(
             height: 80,
           ),
@@ -72,6 +75,26 @@ Widget buildButton() {
   final number = '191';
   return ListTile(
       title: Text('เหตุด่วนเหตุร้าย', style: TextStyle(fontSize: 18)),
+      subtitle: Text(number, style: TextStyle(fontSize: 16, color: Colors.red)),
+      trailing: TextButton(
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 26, vertical: 8),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(color: Colors.blue),
+          ),
+        ),
+        child: Text('โทร', style: TextStyle(fontSize: 17)),
+        onPressed: () async {
+          launch('tel://$number');
+          await FlutterPhoneDirectCaller.callNumber(number);
+        },
+      ));
+}
+
+Widget buildButton0() {
+  final number = '192';
+  return ListTile(
+      title: Text('ภัยพิบัติแห่งชาติ', style: TextStyle(fontSize: 18)),
       subtitle: Text(number, style: TextStyle(fontSize: 16, color: Colors.red)),
       trailing: TextButton(
         style: TextButton.styleFrom(
@@ -188,6 +211,27 @@ Widget buildButton5() {
       ));
 }
 
+Widget buildButton05() {
+  final number = '1300';
+  return ListTile(
+      title: Text('ศูนย์ประชาบดี เพื่อแจ้งบุคคลสูญหาย',
+          style: TextStyle(fontSize: 18)),
+      subtitle: Text(number, style: TextStyle(fontSize: 16, color: Colors.red)),
+      trailing: TextButton(
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 26, vertical: 8),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(color: Colors.blue),
+          ),
+        ),
+        child: Text('โทร', style: TextStyle(fontSize: 17)),
+        onPressed: () async {
+          launch('tel://$number');
+          await FlutterPhoneDirectCaller.callNumber(number);
+        },
+      ));
+}
+
 Widget buildButton6() {
   final number = '1554';
   return ListTile(
@@ -273,6 +317,26 @@ Widget buildButton10() {
   final number = '1197';
   return ListTile(
       title: Text('ประสบเหตุทางจราจร', style: TextStyle(fontSize: 18)),
+      subtitle: Text(number, style: TextStyle(fontSize: 16, color: Colors.red)),
+      trailing: TextButton(
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 26, vertical: 8),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(color: Colors.blue),
+          ),
+        ),
+        child: Text('โทร', style: TextStyle(fontSize: 17)),
+        onPressed: () async {
+          launch('tel://$number');
+          await FlutterPhoneDirectCaller.callNumber(number);
+        },
+      ));
+}
+
+Widget buildButton11() {
+  final number = '1586';
+  return ListTile(
+      title: Text('สายด่วนกรมทางหลาง', style: TextStyle(fontSize: 18)),
       subtitle: Text(number, style: TextStyle(fontSize: 16, color: Colors.red)),
       trailing: TextButton(
         style: TextButton.styleFrom(

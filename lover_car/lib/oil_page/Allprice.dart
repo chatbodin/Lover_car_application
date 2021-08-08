@@ -262,7 +262,7 @@ class Allprice extends StatelessWidget {
               decoration: BoxDecoration(color: Colors.green.shade700),
               height: 40,
               child: Center(
-                child: Text('ราคาน้ำมันเสาร์ 7 สิงหาคม 2564',
+                child: Text('ราคาน้ำมันเสาร์ 9 สิงหาคม 2564',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
