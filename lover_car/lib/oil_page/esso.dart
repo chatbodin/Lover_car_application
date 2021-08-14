@@ -7,7 +7,7 @@ class Essooil extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-              decoration: BoxDecoration(color: Colors.grey.shade600),
+              decoration: BoxDecoration(color: Colors.black),
               height: 45,
               child: Center(
                 child: Text('เอสโซ่ (Esso)',
@@ -18,7 +18,7 @@ class Essooil extends StatelessWidget {
               )),
           Container(
               decoration: BoxDecoration(color: Colors.white),
-              height: 80,
+              height: 85,
               child: Center(
                 child: Image(image: AssetImage('images/esso.png')),
               )),
@@ -47,7 +47,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
+              color: Colors.blueGrey.shade800,
             ),
             height: 50,
             child: Row(
@@ -69,7 +69,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade800,
+              color: Colors.blueGrey.shade900,
             ),
             height: 50,
             child: Row(
@@ -91,7 +91,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
+              color: Colors.blueGrey.shade800,
             ),
             height: 50,
             child: Row(
@@ -113,7 +113,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade800,
+              color: Colors.blueGrey.shade900,
             ),
             height: 50,
             child: Row(
@@ -135,7 +135,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
+              color: Colors.blueGrey.shade800,
             ),
             height: 50,
             child: Row(
@@ -157,7 +157,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade800,
+              color: Colors.blueGrey.shade900,
             ),
             height: 50,
             child: Row(
@@ -179,7 +179,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
+              color: Colors.blueGrey.shade800,
             ),
             height: 50,
             child: Row(
@@ -191,7 +191,7 @@ class Essooil extends StatelessWidget {
                 ),
                 Expanded(
                     child: Text(
-                  '25.99',
+                  '28.99',
                   style: TextStyle(fontSize: 20, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
@@ -201,7 +201,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade800,
+              color: Colors.blueGrey.shade900,
             ),
             height: 50,
             child: Row(
@@ -223,7 +223,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
+              color: Colors.blueGrey.shade800,
             ),
             height: 50,
             child: Row(
@@ -235,7 +235,7 @@ class Essooil extends StatelessWidget {
                 ),
                 Expanded(
                     child: Text(
-                  '33.76',
+                  '35.16',
                   style: TextStyle(fontSize: 20, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
@@ -245,7 +245,7 @@ class Essooil extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade800,
+              color: Colors.blueGrey.shade900,
             ),
             height: 50,
             child: Row(

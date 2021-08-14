@@ -20,10 +20,10 @@ class _TelState extends State<Tel> {
         children: [
           Container(
             decoration: BoxDecoration(color: Colors.red),
-            height: 40,
+            height: 45,
             child: Text('กรณีเหตุด่วนเหตุร้าย',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 20,
                   color: Colors.white,
                 )),
           ),
@@ -37,10 +37,10 @@ class _TelState extends State<Tel> {
           buildButton05(),
           Container(
             decoration: BoxDecoration(color: Colors.orange.shade700),
-            height: 40,
+            height: 45,
             child: Text('กรณีเจ็บป่วย',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 20,
                   color: Colors.white,
                 )),
           ),
@@ -49,10 +49,10 @@ class _TelState extends State<Tel> {
           buildButton8(),
           Container(
             decoration: BoxDecoration(color: Colors.green.shade700),
-            height: 40,
+            height: 45,
             child: Text('กรณีแจ้งเหตุจราจร-ขอความช่วยเหลือ',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 20,
                   color: Colors.white,
                 )),
           ),

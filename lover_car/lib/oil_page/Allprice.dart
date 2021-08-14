@@ -7,7 +7,7 @@ class Allprice extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-              decoration: BoxDecoration(color: Colors.grey.shade600),
+              decoration: BoxDecoration(color: Colors.black),
               height: 45,
               child: Center(
                 child: Text('ราคาน้ำมันถูกสุดวันนี้',
@@ -41,7 +41,7 @@ class Allprice extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
+              color: Colors.blueGrey.shade800,
             ),
             height: 50,
             child: Row(
@@ -63,7 +63,7 @@ class Allprice extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade800,
+              color: Colors.blueGrey.shade900,
             ),
             height: 50,
             child: Row(
@@ -85,7 +85,7 @@ class Allprice extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
+              color: Colors.blueGrey.shade800,
             ),
             height: 50,
             child: Row(
@@ -107,7 +107,7 @@ class Allprice extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade800,
+              color: Colors.blueGrey.shade900,
             ),
             height: 50,
             child: Row(
@@ -129,7 +129,7 @@ class Allprice extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
+              color: Colors.blueGrey.shade800,
             ),
             height: 50,
             child: Row(
@@ -151,7 +151,7 @@ class Allprice extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade800,
+              color: Colors.blueGrey.shade900,
             ),
             height: 50,
             child: Row(
@@ -159,28 +159,6 @@ class Allprice extends StatelessWidget {
               children: [
                 Text(
                   'ดีเซลB7',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-                Expanded(
-                    child: Text(
-                  '28.99',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                  textAlign: TextAlign.right,
-                ))
-              ],
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
-            ),
-            height: 50,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'ดีเซล',
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
                 Expanded(
@@ -202,6 +180,28 @@ class Allprice extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
+                  'ดีเซล',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+                Expanded(
+                    child: Text(
+                  '28.99',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  textAlign: TextAlign.right,
+                ))
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10.0),
+            decoration: BoxDecoration(
+              color: Colors.blueGrey.shade900,
+            ),
+            height: 50,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
                   'ดีเซลB20',
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
@@ -217,7 +217,7 @@ class Allprice extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade500,
+              color: Colors.blueGrey.shade800,
             ),
             height: 50,
             child: Row(
@@ -239,7 +239,7 @@ class Allprice extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              color: Colors.blueGrey.shade800,
+              color: Colors.blueGrey.shade900,
             ),
             height: 50,
             child: Row(
