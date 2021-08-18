@@ -43,7 +43,7 @@ class _AuthenState extends State<Authen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         buildSignInGoogle(),
-                        buildSignInFacebook(),
+                        // buildSignInFacebook(),
                         buildUser(),
                         buildPassword(),
                         buildLogin(),
