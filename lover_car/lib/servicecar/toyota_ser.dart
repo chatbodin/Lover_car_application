@@ -49,7 +49,7 @@ class _toyotaserphayaoState extends State<toyotaserphayao> {
         body: ListView(
           children: [
             Container(
-              height: 550,
+              height: 450,
               width: double.infinity,
               child: GoogleMap(
                 mapType: MapType.normal,
@@ -68,7 +68,7 @@ class _toyotaserphayaoState extends State<toyotaserphayao> {
               child: Container(
                   padding: const EdgeInsets.all(5),
                   height: 140,
-                  width: double.infinity,
+                  //width: double.infinity,
                   color: Colors.red.shade100,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,27 +76,27 @@ class _toyotaserphayaoState extends State<toyotaserphayao> {
                       Text(
                         'โตโยต้า พะเยา',
                         style: TextStyle(
-                            fontSize: 23, fontWeight: FontWeight.bold),
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'ที่อยู่ 403/11 ถ.พหลโยธิน ต.แม่ต๋ำ อ.เมือง จ.พะเยา 56000',
-                        style: TextStyle(fontSize: 21),
+                        'ที่อยู่: 403/11 ถ.พหลโยธิน ต.แม่ต๋ำ อ.เมือง จ.พะเยา 56000',
+                        style: TextStyle(fontSize: 16),
                       ),
                       Text(
                         'โทร:(054)-41-4999   Fax:(054)-41-2040',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 16),
                       ),
                     ],
                   )),
             ),
             SizedBox(
-              height: 15,
+              height: 10,
             ),
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
                   height: 140,
-                  width: double.infinity,
+                  //width: double.infinity,
                   color: Colors.green.shade100,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,15 +104,15 @@ class _toyotaserphayaoState extends State<toyotaserphayao> {
                       Text(
                         'Toyota Phayao Company Limited',
                         style: TextStyle(
-                            fontSize: 23, fontWeight: FontWeight.bold),
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'ที่อยู่ 73 หมู่.3 ถ.เชียงคำ-เทิง ต.หย่วน อ.เชียงคำ จ.พะเยา 56110',
-                        style: TextStyle(fontSize: 21),
+                        'ที่อยู่: 73 หมู่.3 ถ.เชียงคำ-เทิง ต.หย่วน อ.เชียงคำ จ.พะเยา 56110',
+                        style: TextStyle(fontSize: 16),
                       ),
                       Text(
                         'โทร:(054)-41-5184   Fax:(054)-41-5186',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 16),
                       ),
                     ],
                   )),
