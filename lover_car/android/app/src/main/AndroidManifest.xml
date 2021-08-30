@@ -6,6 +6,11 @@
    <application
         android:label="lover_car"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyD3EvFx_OKAvSzIpaO90Sycv1kigAI3Afc"/>
+
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:lover_car/widget/signout.dart';
 
 class Sercar extends StatefulWidget {
@@ -20,74 +21,74 @@ class _SercarState extends State<Sercar> {
     'Mazda'
   ];
   final List<String> Toyotaprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
   final List<String> Hondaprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
   final List<String> Isuzuprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
   final List<String> Suzukiprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
   final List<String> Benzprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
   final List<String> Mgprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
   final List<String> Mitsubishiprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
   final List<String> Fordprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
   final List<String> Nissanprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
   final List<String> Mazdaprovince = [
-    'จังหวัดพะเยา',
-    'จังหวัดลำปาง',
-    'จังหวัดลำพูน',
-    'จังหวัดเชียงใหม่',
-    'จังหวัดเชียงราย'
+    'Phayao',
+    'Lampang',
+    'Lamphun',
+    'ChiangMai',
+    'ChiangRai'
   ];
 
   String? selectedtypecar;
@@ -109,7 +110,7 @@ class _SercarState extends State<Sercar> {
         children: [
           // Country Dropdown
           DropdownButton<String>(
-            hint: Text('เลือกรุ่นรถยนต์'),
+            hint: Text('selecttypecar'),
             value: selectedtypecar,
             isExpanded: true,
             items: typecar.map((String value) {
@@ -152,7 +153,7 @@ class _SercarState extends State<Sercar> {
           SizedBox(height: 40.0),
           // providers Dropdown
           DropdownButton<String>(
-            hint: Text('เลือกจังหวัด'),
+            hint: Text('selectprovince'),
             value: selectedprovince,
             isExpanded: true,
             items: providers.map((String value) {
