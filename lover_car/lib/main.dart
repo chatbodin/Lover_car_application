@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:lover_car/home.dart';
 
 import 'package:lover_car/login/splash.dart';
+import 'package:lover_car/servicecar/google_map_page.dart';
+import 'package:lover_car/servicecar/location_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,8 +18,14 @@ class MyApp extends StatelessWidget {
   static final String title = 'Upload To Github';
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Home(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => LocationProvider(),
+          child: GoogleMapPage(),
+        )
+      ],
+      child:MaterialApp(home: Home(),) ,
     );
   }
 }

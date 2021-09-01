@@ -24,70 +24,70 @@ class _SercarState extends State<Sercar> {
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
   final List<String> Hondaprovince = [
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
   final List<String> Isuzuprovince = [
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
   final List<String> Suzukiprovince = [
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
   final List<String> Benzprovince = [
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
   final List<String> Mgprovince = [
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
   final List<String> Mitsubishiprovince = [
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
   final List<String> Fordprovince = [
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
   final List<String> Nissanprovince = [
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
   final List<String> Mazdaprovince = [
     'Phayao',
     'Lampang',
     'Lamphun',
-    'ChiangMai',
+    'Phrae',
     'ChiangRai'
   ];
 
