@@ -1,11 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
-
-
 
 class toyotaserphayao extends StatefulWidget {
   @override
@@ -14,7 +11,25 @@ class toyotaserphayao extends StatefulWidget {
 
 class _toyotaserphayaoState extends State<toyotaserphayao> {
   Completer<GoogleMapController> _controller = Completer();
+  late GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
+
+  late Position currentPostion;
+  var geoLocator = Geolocator();
+  void locatePositon() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    currentPostion = position;
+    // ignore: unused_local_variable
+    LatLng latLatPosition = LatLng(position.latitude, position.longitude);
+    CameraPosition cameraPosition =
+        new CameraPosition(target: latLatPosition, zoom: 10);
+    newGoogleMapController
+        .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+  }
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+      target: LatLng(19.02972089776868, 99.93090891925993), zoom: 12);
 
   @override
   void initState() {
@@ -52,17 +67,19 @@ class _toyotaserphayaoState extends State<toyotaserphayao> {
         body: ListView(
           children: [
             Container(
-              height: 450,
+              height: 500,
               width: double.infinity,
               child: GoogleMap(
                 mapType: MapType.normal,
                 myLocationButtonEnabled: true,
+                initialCameraPosition: _kGooglePlex,
+                myLocationEnabled: true,
                 zoomControlsEnabled: true,
-                initialCameraPosition: CameraPosition(
-                    target: LatLng(19.403858017494922, 100.1695999978603),
-                    zoom: 9),
+                zoomGesturesEnabled: true,
                 onMapCreated: (GoogleMapController controller) {
                   _controller.complete(controller);
+                  newGoogleMapController = controller;
+                  locatePositon();
                 },
                 markers: markers.map((e) => e).toSet(),
               ),

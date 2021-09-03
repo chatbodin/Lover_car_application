@@ -48,7 +48,7 @@ class _ResetPageState extends State<ResetPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Reset Password'),
+        title: Text('รีเซ็ตรหัสผ่าน'),
         backgroundColor: Mystyle().primaryColor,
       ),
       body: Stack(
@@ -78,7 +78,7 @@ class _ResetPageState extends State<ResetPage> {
                           MaterialPageRoute(builder: (context) => Authen()));
                     },
                     child: Text(
-                      "Already have an account? Login ",
+                      "กลับไปหน้าเมนูหลัก ",
                       style: Mystyle().activeStyle(),
                     ),
                   ),
@@ -126,7 +126,7 @@ class _ResetPageState extends State<ResetPage> {
             });
           },
           icon: Icon(Icons.restore_page),
-          label: Text('Reset account')),
+          label: Text('รีเซ็ตรหัสผ่าน')),
     );
   }
 }

@@ -58,7 +58,7 @@ class _AuthenState extends State<Authen> {
                                     builder: (context) => CreateAccount()));
                           },
                           child: Text(
-                            "Don't have an account? Register ",
+                            "สร้างบัญชีผู้ใช้งานที่นี่ ",
                             style: Mystyle().activeStyle(),
                           ),
                         ),
@@ -73,7 +73,7 @@ class _AuthenState extends State<Authen> {
                                     builder: (context) => ResetPage()));
                           },
                           child: Text(
-                            "Forgot Password? reset ",
+                            "ลืมรหัสผ่านใช่หรือไม่ ",
                             style: Mystyle().activeStyle(),
                           ),
                         ),

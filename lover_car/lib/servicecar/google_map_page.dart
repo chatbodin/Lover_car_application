@@ -45,9 +45,10 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                 child: GoogleMap(
                   mapType: MapType.normal,
                   initialCameraPosition:
-                      CameraPosition(target: model.locationPosition, zoom: 18),
+                      CameraPosition(target: model.locationPosition, zoom: 10),
                   myLocationEnabled: true,
                   myLocationButtonEnabled: true,
+                  markers: Set<Marker>.of(model.markers.values),
                   onMapCreated: (GoogleMapController controller) {},
                 )),
             SingleChildScrollView(

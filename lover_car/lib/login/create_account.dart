@@ -105,7 +105,7 @@ class _CreateAccountState extends State<CreateAccount> {
                           MaterialPageRoute(builder: (context) => Authen()));
                     },
                     child: Text(
-                      "Already have an account? Login ",
+                      "กลับไปหน้าเมนูหลัก ",
                       style: Mystyle().activeStyle(),
                     ),
                   ),
@@ -152,7 +152,7 @@ class _CreateAccountState extends State<CreateAccount> {
             });
           },
           icon: Icon(Icons.cloud_upload),
-          label: Text('Create account')),
+          label: Text('สร้างบัญชีผู้ใช้')),
     );
   }
 }
