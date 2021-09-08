@@ -1,0 +1,551 @@
+import 'dart:async';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+class mgphayao extends StatefulWidget {
+  @override
+  _mgphayaoState createState() => _mgphayaoState();
+}
+
+class _mgphayaoState extends State<mgphayao> {
+  Completer<GoogleMapController> _controller = Completer();
+  late GoogleMapController newGoogleMapController;
+  List<Marker> markers = [];
+
+  late Position currentPostion;
+  var geoLocator = Geolocator();
+  void locatePositon() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    currentPostion = position;
+    // ignore: unused_local_variable
+    LatLng latLatPosition = LatLng(position.latitude, position.longitude);
+    CameraPosition cameraPosition =
+        new CameraPosition(target: latLatPosition, zoom: 10);
+    newGoogleMapController
+        .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+  }
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+      target: LatLng(19.02972089776868, 99.93090891925993), zoom: 12);
+
+  @override
+  void initState() {
+    intilize();
+    super.initState();
+  }
+
+  intilize() {
+    Marker oneMarker = Marker(
+        markerId: MarkerId('บริษัท เอ็มจี ล้านนา จำกัด(สาขาพะเยา)'),
+        position: LatLng(19.15320751240071, 99.91325027548214),
+        infoWindow: InfoWindow(title: 'บริษัท เอ็มจี ล้านนา จำกัด(สาขาพะเยา)'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueBlue,
+        ));
+
+    markers.add(oneMarker);
+
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.grey.shade100,
+        body: ListView(
+          children: [
+            Container(
+              height: 500,
+              width: double.infinity,
+              child: GoogleMap(
+                mapType: MapType.normal,
+                myLocationButtonEnabled: true,
+                initialCameraPosition: _kGooglePlex,
+                myLocationEnabled: true,
+                zoomControlsEnabled: true,
+                zoomGesturesEnabled: true,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                  newGoogleMapController = controller;
+                  locatePositon();
+                },
+                markers: markers.map((e) => e).toSet(),
+              ),
+            ),
+            SingleChildScrollView(
+              child: Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.blue.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท เอ็มจี ล้านนา จำกัด(สาขาพะเยา)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่: 413/2 ถ.พหลโยธิน ต.แม่ต๋ำ อ.เมือง จ.พะเยา 56000',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:054-482-333',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+            ),
+          ],
+        ));
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+class mglampang extends StatefulWidget {
+  @override
+  _mglampangState createState() => _mglampangState();
+}
+
+class _mglampangState extends State<mglampang> {
+  Completer<GoogleMapController> _controller = Completer();
+  late GoogleMapController newGoogleMapController;
+  List<Marker> markers = [];
+
+  late Position currentPostion;
+  var geoLocator = Geolocator();
+  void locatePositon() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    currentPostion = position;
+    // ignore: unused_local_variable
+    LatLng latLatPosition = LatLng(position.latitude, position.longitude);
+    CameraPosition cameraPosition =
+        new CameraPosition(target: latLatPosition, zoom: 10);
+    newGoogleMapController
+        .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+  }
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+      target: LatLng(19.02972089776868, 99.93090891925993), zoom: 12);
+
+  @override
+  void initState() {
+    intilize();
+    super.initState();
+  }
+
+  intilize() {
+    Marker oneMarker = Marker(
+        markerId: MarkerId('บริษัท แพร่ยนตรการ เซลส์ แอนด์ เซอร์วิส จำกัด'),
+        position: LatLng(18.216486636058086, 99.42304563858335),
+        infoWindow: InfoWindow(title: 'บริษัท เอ็มจี ล้านนา จำกัด(สาขาพะเยา)'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueGreen,
+        ));
+
+    markers.add(oneMarker);
+
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.grey.shade100,
+        body: ListView(
+          children: [
+            Container(
+              height: 500,
+              width: double.infinity,
+              child: GoogleMap(
+                mapType: MapType.normal,
+                myLocationButtonEnabled: true,
+                initialCameraPosition: _kGooglePlex,
+                myLocationEnabled: true,
+                zoomControlsEnabled: true,
+                zoomGesturesEnabled: true,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                  newGoogleMapController = controller;
+                  locatePositon();
+                },
+                markers: markers.map((e) => e).toSet(),
+              ),
+            ),
+            SingleChildScrollView(
+              child: Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.green.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท แพร่ยนตรการ เซลส์ แอนด์ เซอร์วิส จำกัด',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่:168 หมู่1 ถ.พหลโยธิน ต.ศาลา อ.เกาะคา จ.ลำปาง 52130',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:054-010-295-6',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+            ),
+          ],
+        ));
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+class mglamphun extends StatefulWidget {
+  @override
+  _mglamphunState createState() => _mglamphunState();
+}
+
+class _mglamphunState extends State<mglamphun> {
+  Completer<GoogleMapController> _controller = Completer();
+  late GoogleMapController newGoogleMapController;
+  List<Marker> markers = [];
+
+  late Position currentPostion;
+  var geoLocator = Geolocator();
+  void locatePositon() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    currentPostion = position;
+    // ignore: unused_local_variable
+    LatLng latLatPosition = LatLng(position.latitude, position.longitude);
+    CameraPosition cameraPosition =
+        new CameraPosition(target: latLatPosition, zoom: 10);
+    newGoogleMapController
+        .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+  }
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+      target: LatLng(19.02972089776868, 99.93090891925993), zoom: 12);
+
+  @override
+  void initState() {
+    intilize();
+    super.initState();
+  }
+
+  intilize() {
+    Marker oneMarker = Marker(
+        markerId: MarkerId('บริษัท นอร์ทพอยท์ออโต้ลำพูน จำกัด'),
+        position: LatLng(18.60384441669539, 99.02218818635798),
+        infoWindow: InfoWindow(title: 'บริษัท นอร์ทพอยท์ออโต้ลำพูน จำกัด'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueRed,
+        ));
+
+    markers.add(oneMarker);
+
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.grey.shade100,
+        body: ListView(
+          children: [
+            Container(
+              height: 500,
+              width: double.infinity,
+              child: GoogleMap(
+                mapType: MapType.normal,
+                myLocationButtonEnabled: true,
+                initialCameraPosition: _kGooglePlex,
+                myLocationEnabled: true,
+                zoomControlsEnabled: true,
+                zoomGesturesEnabled: true,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                  newGoogleMapController = controller;
+                  locatePositon();
+                },
+                markers: markers.map((e) => e).toSet(),
+              ),
+            ),
+            SingleChildScrollView(
+              child: Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.red.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท นอร์ทพอยท์ออโต้ลำพูน จำกัด',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่:53/1 หมู่10 ถ.เชียงใหม่-ลำพูน ต.เหมืองง่า อ.เมืองลำพูน จ.ลำพูน 51000',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053-525-869',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+            ),
+          ],
+        ));
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+class mgPhrae extends StatefulWidget {
+  @override
+  _mgPhraeState createState() => _mgPhraeState();
+}
+
+class _mgPhraeState extends State<mgPhrae> {
+  Completer<GoogleMapController> _controller = Completer();
+  late GoogleMapController newGoogleMapController;
+  List<Marker> markers = [];
+
+  late Position currentPostion;
+  var geoLocator = Geolocator();
+  void locatePositon() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    currentPostion = position;
+    // ignore: unused_local_variable
+    LatLng latLatPosition = LatLng(position.latitude, position.longitude);
+    CameraPosition cameraPosition =
+        new CameraPosition(target: latLatPosition, zoom: 10);
+    newGoogleMapController
+        .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+  }
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+      target: LatLng(19.02972089776868, 99.93090891925993), zoom: 12);
+
+  @override
+  void initState() {
+    intilize();
+    super.initState();
+  }
+
+  intilize() {
+    Marker oneMarker = Marker(
+        markerId: MarkerId('บริษัท เอ็มจี แพร่ (2019) จำกัด'),
+        position: LatLng(18.11981248805025, 100.13999300321893),
+        infoWindow: InfoWindow(title: 'บริษัท เอ็มจี แพร่ (2019) จำกัด'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueCyan,
+        ));
+
+    markers.add(oneMarker);
+
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.grey.shade100,
+        body: ListView(
+          children: [
+            Container(
+              height: 500,
+              width: double.infinity,
+              child: GoogleMap(
+                mapType: MapType.normal,
+                myLocationButtonEnabled: true,
+                initialCameraPosition: _kGooglePlex,
+                myLocationEnabled: true,
+                zoomControlsEnabled: true,
+                zoomGesturesEnabled: true,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                  newGoogleMapController = controller;
+                  locatePositon();
+                },
+                markers: markers.map((e) => e).toSet(),
+              ),
+            ),
+            SingleChildScrollView(
+              child: Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.cyan.shade300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท เอ็มจี แพร่ (2019) จำกัด',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่:173 หมู่7 ถ.ยันตรกิจโกศล ต.ป่าแมต อ.เมืองแพร่ จ.แพร่ 54000',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:054-531-333',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+            ),
+          ],
+        ));
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+class mgChiangrai extends StatefulWidget {
+  @override
+  _mgChiangraiState createState() => _mgChiangraiState();
+}
+
+class _mgChiangraiState extends State<mgChiangrai> {
+  Completer<GoogleMapController> _controller = Completer();
+  late GoogleMapController newGoogleMapController;
+  List<Marker> markers = [];
+
+  late Position currentPostion;
+  var geoLocator = Geolocator();
+  void locatePositon() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    currentPostion = position;
+    // ignore: unused_local_variable
+    LatLng latLatPosition = LatLng(position.latitude, position.longitude);
+    CameraPosition cameraPosition =
+        new CameraPosition(target: latLatPosition, zoom: 10);
+    newGoogleMapController
+        .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+  }
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+      target: LatLng(19.02972089776868, 99.93090891925993), zoom: 12);
+
+  @override
+  void initState() {
+    intilize();
+    super.initState();
+  }
+
+  intilize() {
+    Marker oneMarker = Marker(
+        markerId: MarkerId('บริษัท เอ็มจี ล้านนา จำกัด'),
+        position: LatLng(19.878714217190883, 99.83315723686775),
+        infoWindow: InfoWindow(title: 'บริษัท เอ็มจี ล้านนา จำกัด'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueOrange,
+        ));
+    Marker twoMarker = Marker(
+        markerId: MarkerId('บริษัท เอ็มจี ล้านนา จำกัด(สาขาแม่สาย)'),
+        position: LatLng(20.403599809160397, 99.88473190368394),
+        infoWindow: InfoWindow(title: 'บริษัท เอ็มจี ล้านนา จำกัด(สาขาแม่สาย)'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueYellow,
+        ));
+    markers.add(oneMarker);
+    markers.add(twoMarker);
+
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.grey.shade100,
+        body: ListView(
+          children: [
+            Container(
+              height: 500,
+              width: double.infinity,
+              child: GoogleMap(
+                mapType: MapType.normal,
+                myLocationButtonEnabled: true,
+                initialCameraPosition: _kGooglePlex,
+                myLocationEnabled: true,
+                zoomControlsEnabled: true,
+                zoomGesturesEnabled: true,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                  newGoogleMapController = controller;
+                  locatePositon();
+                },
+                markers: markers.map((e) => e).toSet(),
+              ),
+            ),
+            SingleChildScrollView(
+              child: Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.orange.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท เอ็มจี ล้านนา จำกัด',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่:111/21-22 หมู่13 ถ.พหลโยธิน ต.สันทราย อ.เมือง จ.เชียงราย 57000',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053-774-888',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            SingleChildScrollView(
+              child: Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 140,
+                  //width: double.infinity,
+                  color: Colors.yellow.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท เอ็มจี ล้านนา จำกัด(สาขาแม่สาย)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่: 251 หมู่5 ต.เวียงพางคำ อ.แม่สาย จ.เชียงราย 57130',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053-731-788',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+            ),
+          ],
+        ));
+  }
+}

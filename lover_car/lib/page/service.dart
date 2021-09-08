@@ -13,7 +13,6 @@ class _SercarState extends State<Sercar> {
     'Honda',
     'Isuzu',
     'Suzuki',
-    'Benz',
     'Mg',
     'Mitsubishi',
     'Ford',
@@ -48,13 +47,7 @@ class _SercarState extends State<Sercar> {
     'Phrae',
     'ChiangRai'
   ];
-  final List<String> Benzprovince = [
-    'Phayao',
-    'Lampang',
-    'Lamphun',
-    'Phrae',
-    'ChiangRai'
-  ];
+  
   final List<String> Mgprovince = [
     'Phayao',
     'Lampang',
@@ -128,8 +121,6 @@ class _SercarState extends State<Sercar> {
                 providers = Isuzuprovince;
               } else if (typecars == 'Suzuki') {
                 providers = Suzukiprovince;
-              } else if (typecars == 'Benz') {
-                providers = Benzprovince;
               } else if (typecars == 'Mg') {
                 providers = Mgprovince;
               } else if (typecars == 'Mitsubishi') {
