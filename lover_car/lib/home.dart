@@ -4,7 +4,7 @@ import 'package:lover_car/page/nofi.dart';
 import 'package:lover_car/page/oil.dart';
 import 'package:lover_car/page/sum_oil.dart';
 import 'package:lover_car/page/tel.dart';
-import 'package:lover_car/servicecar/ford_ser.dart';
+import 'package:lover_car/servicecar/mazda_ser.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
     Sumary(),
     Nofication(),
     Tel(),
-    fordChiangrai(),
+    mazdaChiangrai(),
   ];
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = History();
@@ -145,7 +145,7 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        currentScreen = fordChiangrai();
+                        currentScreen = mazdaChiangrai();
                         currentTab = 4;
                       });
                     },
