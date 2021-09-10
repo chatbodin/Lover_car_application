@@ -18,7 +18,7 @@ class Shelloil extends StatelessWidget {
               )),
           Container(
               decoration: BoxDecoration(color: Colors.white),
-              height: 85,
+              height: 80,
               child: Center(
                 child: Image(image: AssetImage('images/shell.png')),
               )),
@@ -27,18 +27,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.red.shade700,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'น้ำมัน',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
                   'ราคาน้ำมัน(บาท/ลิตร)',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -49,18 +49,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade800,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'แก๊สโซฮอล์95',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
-                  '29.45',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  '29.25',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -71,18 +71,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade900,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'แก๊สโซฮอล์91',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
-                  '29.18',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  '28.98',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -93,18 +93,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade800,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'แก๊สโซฮอล์E20',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
-                  '27.94',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  '27.74',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -115,18 +115,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade900,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'แก๊สโซฮอล์E85',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
                   '-',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -137,18 +137,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade800,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'เบนซิล95',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
                   '-',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -159,18 +159,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade900,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'ดีเซลB7',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
-                  '28.99',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  '29.09',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -181,18 +181,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade800,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'ดีเซล',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
-                  '28.99',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  '26.09',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -203,18 +203,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade900,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'ดีเซลB20',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
-                  '25.94',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  '26.04',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -225,18 +225,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade800,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'ดีเซลพรีเมี่ยม',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
-                  '35.44',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  '35.54',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -247,18 +247,18 @@ class Shelloil extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blueGrey.shade900,
             ),
-            height: 50,
+            height: 40,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'แก๊สNGV',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Expanded(
                     child: Text(
                   '-',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                   textAlign: TextAlign.right,
                 ))
               ],
@@ -268,7 +268,7 @@ class Shelloil extends StatelessWidget {
               decoration: BoxDecoration(color: Colors.green.shade700),
               height: 40,
               child: Center(
-                child: Text('ราคาน้ำมันเสาร์ 9 สิงหาคม 2564',
+                child: Text('ราคาน้ำมันเสาร์ 9 กันยายน 2564',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,

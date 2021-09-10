@@ -675,48 +675,48 @@ class _isuzuchiangraiState extends State<isuzuchiangrai> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
           BitmapDescriptor.hueMagenta,
         ));
-    // Marker sixMarker = Marker(
-    //     markerId: MarkerId('บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาเชียงราย)'),
-    //     position: LatLng(19.96176, 99.85368),
-    //     infoWindow: InfoWindow(
-    //         title: 'บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาเชียงราย)'),
-    //     icon: BitmapDescriptor.defaultMarkerWithHue(
-    //       BitmapDescriptor.hueRose,
-    //     ));
-    // Marker sevenMarker = Marker(
-    //     markerId: MarkerId('บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาแม่จัน)'),
-    //     position: LatLng(20.19082, 99.89620),
-    //     infoWindow:
-    //         InfoWindow(title: 'บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาแม่จัน)'),
-    //     icon: BitmapDescriptor.defaultMarkerWithHue(
-    //       BitmapDescriptor.hueCyan,
-    //     ));
-    // Marker eightMarker = Marker(
-    //     markerId: MarkerId('บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาแม่สาย)'),
-    //     position: LatLng(20.29269, 99.87173),
-    //     infoWindow:
-    //         InfoWindow(title: 'บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาแม่สาย)'),
-    //     icon: BitmapDescriptor.defaultMarkerWithHue(
-    //       BitmapDescriptor.hueYellow,
-    //     ));
-    // Marker nineMarker = Marker(
-    //     markerId: MarkerId('บริษัท อีซูซุเชียงราย(2002)จำกัด(สาขาเชียงของ)'),
-    //     position: LatLng(20.224402, 100.40351),
-    //     infoWindow:
-    //         InfoWindow(title: 'บริษัท อีซูซุเชียงราย(2002)จำกัด(สาขาเชียงของ)'),
-    //     icon: BitmapDescriptor.defaultMarkerWithHue(
-    //       BitmapDescriptor.hueViolet,
-    //     ));
+    Marker sixMarker = Marker(
+        markerId: MarkerId('บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาเชียงราย)'),
+        position: LatLng(19.96176, 99.85368),
+        infoWindow: InfoWindow(
+            title: 'บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาเชียงราย)'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueRose,
+        ));
+    Marker sevenMarker = Marker(
+        markerId: MarkerId('บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาแม่จัน)'),
+        position: LatLng(20.19082, 99.89620),
+        infoWindow:
+            InfoWindow(title: 'บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาแม่จัน)'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueCyan,
+        ));
+    Marker eightMarker = Marker(
+        markerId: MarkerId('บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาแม่สาย)'),
+        position: LatLng(20.29269, 99.87173),
+        infoWindow:
+            InfoWindow(title: 'บริษัท อีซูซุสงวนไทยเชียงรายจำกัด(สาขาแม่สาย)'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueYellow,
+        ));
+    Marker nineMarker = Marker(
+        markerId: MarkerId('บริษัท อีซูซุเชียงราย(2002)จำกัด(สาขาเชียงของ)'),
+        position: LatLng(20.224402, 100.40351),
+        infoWindow:
+            InfoWindow(title: 'บริษัท อีซูซุเชียงราย(2002)จำกัด(สาขาเชียงของ)'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueViolet,
+        ));
 
     markers.add(oneMarker);
     markers.add(twoMarker);
     markers.add(threeMarker);
     markers.add(fourMarker);
     markers.add(fiveMarker);
-    // markers.add(sixMarker);
-    // markers.add(sevenMarker);
-    // markers.add(eightMarker);
-    // markers.add(nineMarker);
+    markers.add(sixMarker);
+    markers.add(sevenMarker);
+    markers.add(eightMarker);
+    markers.add(nineMarker);
 
     setState(() {});
   }
@@ -724,251 +724,263 @@ class _isuzuchiangraiState extends State<isuzuchiangrai> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
-      body: ListView(
-        children: [
-          Container(
-            height: 500,
-            width: double.infinity,
-            child: GoogleMap(
-              mapType: MapType.normal,
-              myLocationButtonEnabled: true,
-              initialCameraPosition: _kGooglePlex,
-              myLocationEnabled: true,
-              zoomControlsEnabled: true,
-              zoomGesturesEnabled: true,
-              onMapCreated: (GoogleMapController controller) {
-                _controller.complete(controller);
-                newGoogleMapController = controller;
-                locatePositon();
-              },
-              markers: markers.map((e) => e).toSet(),
-            ),
+        backgroundColor: Colors.grey.shade100,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                height: 500,
+                width: double.infinity,
+                child: GoogleMap(
+                  mapType: MapType.normal,
+                  myLocationButtonEnabled: true,
+                  initialCameraPosition: _kGooglePlex,
+                  myLocationEnabled: true,
+                  zoomControlsEnabled: true,
+                  zoomGesturesEnabled: true,
+                  onMapCreated: (GoogleMapController controller) {
+                    _controller.complete(controller);
+                    newGoogleMapController = controller;
+                    locatePositon();
+                  },
+                  markers: markers.map((e) => e).toSet(),
+                ),
+              ),
+              Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.blue.shade700,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท อีซูซุเชียงราย(2002) จำกัด(สาขาเวียงป่าเป้า)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่:122 หมู่ที่ 6 ต.เวียงกาหลง อ.เวียงป่าเป้า จ.เชียงราย 57260',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053798007 ต่อ 104',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.orange.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท อีซูซุสงวนไทยเชียงราย จำกัด(สาขาพาน)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่: 227 หมู่17 ถ.พหลโยธิน ต.สันกลาง อ.พาน จ.เชียงราย 57120',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053722999',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.green.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท อีซูซุเชียงราย(2002) จำกัด(สาขาเทิง)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่:232 หมู่ที่ 2 ต.เวียง อ.เทิง จ.เชียงราย 57160',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053669911 ต่อ 102',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.red.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท อีซูซุเชียงราย(2002) จำกัด(สำนักงานใหญ่)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่:255 หมู่3 ถ.พหลโยธิน ต.ป่าอ้อดอนชัย อ.เมืองเชียงราย จ.เชียงราย 57000',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:052029644',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.purple.shade100,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท อีซูซุเชียงราย(2002) จำกัด(สาขาศรีทรายมูล)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่: 145/1 หมู่17 ถ.ซุปเปอร์ไฮเวย์ ต.รอบเวียง อ.เมือง จ.เชียงราย 57000',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053711605 ต่อ 148',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.pink.shade300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท อีซูซุสงวนไทยเชียงราย จำกัด(สาขาเชียงราย)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่: 222 หมู่2 ถ.พหลโยธิน ต.บ้านดู่ อ.เมือง จ.เชียงราย 57100',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053702666-8',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.lightBlue.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท อีซูซุสงวนไทยเชียงราย จำกัด(สาขาแม่จัน)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่: 333 หมู่5 ต.จอมสวรรค์ อ.แม่จัน เชียงราย 57110',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053160998',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.yellow.shade200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท อีซูซุสงวนไทยเชียงราย จำกัด(สาขาแม่สาย)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่: 419 หมู่11 ต.ห้วยไคร้ อ.แม่สาย จ.เชียงราย 57220',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053667669',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(5),
+                  height: 160,
+                  //width: double.infinity,
+                  color: Colors.purple.shade600,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'บริษัท อีซูซุเชียงราย(2002) จำกัด(สาขาเชียงของ)',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'ที่อยู่: 123 หมู่7 ต.สถาน อ.เชียงของ จ.เชียงราย 57140',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        'โทร:053791599 ต่อ 102',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  )),
+            ],
           ),
-          Container(
-              padding: const EdgeInsets.all(5),
-              height: 160,
-              //width: double.infinity,
-              color: Colors.blue.shade700,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'บริษัท อีซูซุเชียงราย(2002) จำกัด(สาขาเวียงป่าเป้า)',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'ที่อยู่:122 หมู่ที่ 6 ต.เวียงกาหลง อ.เวียงป่าเป้า จ.เชียงราย 57260',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  Text(
-                    'โทร:053798007 ต่อ 104',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              )),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-              padding: const EdgeInsets.all(5),
-              height: 160,
-              //width: double.infinity,
-              color: Colors.orange.shade200,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'บริษัท อีซูซุสงวนไทยเชียงราย จำกัด(สาขาพาน)',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'ที่อยู่: 227 หมู่17 ถ.พหลโยธิน ต.สันกลาง อ.พาน จ.เชียงราย 57120',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  Text(
-                    'โทร:053722999',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              )),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-              padding: const EdgeInsets.all(5),
-              height: 160,
-              //width: double.infinity,
-              color: Colors.green.shade200,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'บริษัท อีซูซุเชียงราย(2002) จำกัด(สาขาเทิง)',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'ที่อยู่:232 หมู่ที่ 2 ต.เวียง อ.เทิง จ.เชียงราย 57160',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  Text(
-                    'โทร:053669911 ต่อ 102',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              )),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-              padding: const EdgeInsets.all(5),
-              height: 160,
-              //width: double.infinity,
-              color: Colors.red.shade200,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'บริษัท อีซูซุเชียงราย(2002) จำกัด(สำนักงานใหญ่)',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'ที่อยู่:255 หมู่3 ถ.พหลโยธิน ต.ป่าอ้อดอนชัย อ.เมืองเชียงราย จ.เชียงราย 57000',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  Text(
-                    'โทร:052029644',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              )),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-              padding: const EdgeInsets.all(5),
-              height: 160,
-              //width: double.infinity,
-              color: Colors.purple.shade100,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'บริษัท อีซูซุเชียงราย(2002) จำกัด(สาขาศรีทรายมูล)',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'ที่อยู่: 145/1 หมู่17 ถ.ซุปเปอร์ไฮเวย์ ต.รอบเวียง อ.เมือง จ.เชียงราย 57000',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                  Text(
-                    'โทร:053711605 ต่อ 148',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              )),
-          // SizedBox(
-          //   height: 10,
-          // ),
-          // Container(
-          //     padding: const EdgeInsets.all(5),
-          //     height: 160,
-          //     //width: double.infinity,
-          //     color: Colors.pink.shade300,
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         Text(
-          //           'บริษัท อีซูซุสงวนไทยเชียงราย จำกัด(สาขาเชียงราย)',
-          //           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          //         ),
-          //         Text(
-          //           'ที่อยู่: 222 หมู่2 ถ.พหลโยธิน ต.บ้านดู่ อ.เมือง จ.เชียงราย 57100',
-          //           style: TextStyle(fontSize: 16),
-          //         ),
-          //         Text(
-          //           'โทร:053702666-8',
-          //           style: TextStyle(fontSize: 16),
-          //         ),
-          //       ],
-          //     )),
-          // SizedBox(
-          //   height: 10,
-          // ),
-          // Container(
-          //     padding: const EdgeInsets.all(5),
-          //     height: 160,
-          //     //width: double.infinity,
-          //     color: Colors.lightBlue.shade200,
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         Text(
-          //           'บริษัท อีซูซุสงวนไทยเชียงราย จำกัด(สาขาแม่จัน)',
-          //           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          //         ),
-          //         Text(
-          //           'ที่อยู่: 333 หมู่5 ต.จอมสวรรค์ อ.แม่จัน เชียงราย 57110',
-          //           style: TextStyle(fontSize: 16),
-          //         ),
-          //         Text(
-          //           'โทร:053160998',
-          //           style: TextStyle(fontSize: 16),
-          //         ),
-          //       ],
-          //     )),
-          // SizedBox(
-          //   height: 10,
-          // ),
-          // Container(
-          //     padding: const EdgeInsets.all(5),
-          //     height: 160,
-          //     //width: double.infinity,
-          //     color: Colors.yellow.shade200,
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         Text(
-          //           'บริษัท อีซูซุสงวนไทยเชียงราย จำกัด(สาขาแม่สาย)',
-          //           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          //         ),
-          //         Text(
-          //           'ที่อยู่: 419 หมู่11 ต.ห้วยไคร้ อ.แม่สาย จ.เชียงราย 57220',
-          //           style: TextStyle(fontSize: 16),
-          //         ),
-          //         Text(
-          //           'โทร:053667669',
-          //           style: TextStyle(fontSize: 16),
-          //         ),
-          //       ],
-          //     )),
-          // SizedBox(
-          //   height: 10,
-          // ),
-          // Container(
-          //     padding: const EdgeInsets.all(5),
-          //     height: 160,
-          //     //width: double.infinity,
-          //     color: Colors.purple.shade600,
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         Text(
-          //           'บริษัท อีซูซุเชียงราย(2002) จำกัด(สาขาเชียงของ)',
-          //           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          //         ),
-          //         Text(
-          //           'ที่อยู่: 123 หมู่7 ต.สถาน อ.เชียงของ จ.เชียงราย 57140',
-          //           style: TextStyle(fontSize: 16),
-          //         ),
-          //         Text(
-          //           'โทร:053791599 ต่อ 102',
-          //           style: TextStyle(fontSize: 16),
-          //         ),
-          //       ],
-          //     )),
-        ],
-      ),
-    );
+        ));
+    // ignore: dead_code
+  
   }
 }
