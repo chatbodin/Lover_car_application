@@ -1,11 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:flutter/material.dart';
 import 'package:lover_car/home.dart';
 
-
-
-import 'authen.dart';
+import 'menulogin.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -21,7 +18,7 @@ class _SplashState extends State<Splash> {
       if (auth.currentUser == null) {
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => Authen()),
+            MaterialPageRoute(builder: (context) => menusLogin()),
             (route) => false);
       } else {
         Navigator.pushAndRemoveUntil(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lover_car/login/auth_provider.dart';
-import 'package:lover_car/login/authen.dart';
+
+import 'package:lover_car/login/menulogin.dart';
 
 class MySignOut extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class MySignOut extends StatelessWidget {
             AuthClass().signOut();
             Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => Authen()),
+                MaterialPageRoute(builder: (context) => menusLogin()),
                 (route) => false);
           },
           leading: Icon(

@@ -20,6 +20,7 @@ class _AuthenState extends State<Authen> {
   bool? redEye = true, isLoading = false;
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -200,7 +201,7 @@ class _AuthenState extends State<Authen> {
             });
             AuthClass()
                 .signIN(
-                    email: _email.text.trim(), password: _password.text.trim())
+                    email: _email.text.trim(), password: _password.text.trim(),)
                 .then((value) {
               if (value == "Welcome") {
                 setState(() {
@@ -232,27 +233,7 @@ class _AuthenState extends State<Authen> {
         ),
       );
 
-  // Row buildCreateAccount() {
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //     children: [
-  //       SizedBox(
-  //         width: 50,
-  //       ),
-  //       Text(
-  //         'Non Account ?',
-  //         style: Mystyle().whiteStyle(),
-  //       ),
-  //       TextButton(
-  //         onPressed: () => Navigator.pushNamed(context, '/createAccount'),
-  //         child: Text(
-  //           'Create Account',
-  //           style: Mystyle().activeStyle(),
-  //         ),
-  //       ),
-  //     ],
-  //   );
-  // }
+
 
   Container buildLogo() {
     return Container(

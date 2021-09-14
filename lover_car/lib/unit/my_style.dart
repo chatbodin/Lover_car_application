@@ -12,6 +12,7 @@ class Mystyle {
       color: Colors.pink.shade600, fontWeight: FontWeight.w700, fontSize: 17);
 
   Widget showLogo() => Image(
+        
         image: AssetImage('images/logos.png'),
       );
 

@@ -6,10 +6,14 @@ class AuthClass {
   FirebaseAuth auth = FirebaseAuth.instance;
 
   //Create Account
-  Future<String?> createAccount({required email, required password}) async {
+  Future<String?> createAccount(
+      {required email, required password, required confirmpassword}) async {
     try {
       await auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+        email: email,
+        password: password,
+        
+      );
       return "Account created";
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -24,9 +28,15 @@ class AuthClass {
 
   //Sign in user
   Future<String?> signIN(
-      {required String email, required String password}) async {
+      {required String email,
+      required String password,
+      }) async {
     try {
-      await auth.signInWithEmailAndPassword(email: email, password: password);
+      await auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+        
+      );
       return "Welcome";
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {

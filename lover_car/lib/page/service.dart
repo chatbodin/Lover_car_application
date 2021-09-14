@@ -47,7 +47,7 @@ class _SercarState extends State<Sercar> {
     'Phrae',
     'ChiangRai'
   ];
-  
+
   final List<String> Mgprovince = [
     'Phayao',
     'Lampang',
@@ -103,7 +103,7 @@ class _SercarState extends State<Sercar> {
         children: [
           // Country Dropdown
           DropdownButton<String>(
-            hint: Text('selecttypecar'),
+            hint: Text('เลือกรุ่นรถยนต์'),
             value: selectedtypecar,
             isExpanded: true,
             items: typecar.map((String value) {
@@ -144,7 +144,7 @@ class _SercarState extends State<Sercar> {
           SizedBox(height: 40.0),
           // providers Dropdown
           DropdownButton<String>(
-            hint: Text('selectprovince'),
+            hint: Text('เลือกจังหวัด'),
             value: selectedprovince,
             isExpanded: true,
             items: providers.map((String value) {
@@ -156,6 +156,7 @@ class _SercarState extends State<Sercar> {
             onChanged: (providers) {
               setState(() {
                 selectedprovince = providers;
+                
               });
             },
           ),

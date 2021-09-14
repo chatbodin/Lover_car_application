@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lover_car/login/auth_provider.dart';
-import 'package:lover_car/login/authen.dart';
+
+import 'package:lover_car/login/menulogin.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
                 AuthClass().signOut();
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => Authen()),
+                    MaterialPageRoute(builder: (context) => menusLogin()),
                     (route) => false);
                 //sign Out User
               })

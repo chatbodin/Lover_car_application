@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lover_car/page/history.dart';
 import 'package:lover_car/page/nofi.dart';
 import 'package:lover_car/page/oil.dart';
+import 'package:lover_car/page/service.dart';
 import 'package:lover_car/page/sum_oil.dart';
 import 'package:lover_car/page/tel.dart';
-import 'package:lover_car/servicecar/isuzu_ser.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
     Sumary(),
     Nofication(),
     Tel(),
-    isuzuchiangrai(),
+    Sercar(),
   ];
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = History();
@@ -145,7 +145,7 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        currentScreen = isuzuchiangrai();
+                        currentScreen = Sercar();
                         currentTab = 4;
                       });
                     },
