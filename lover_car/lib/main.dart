@@ -7,9 +7,9 @@ import 'package:lover_car/servicecar/google_map_page.dart';
 import 'package:lover_car/servicecar/location_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
+  await Firebase.initializeApp();
 
   runApp(MyApp());
 }
@@ -25,7 +25,9 @@ class MyApp extends StatelessWidget {
           child: GoogleMapPage(),
         )
       ],
-      child:MaterialApp(home: Home(),) ,
+      child: MaterialApp(
+        home: Home(),
+      ),
     );
   }
 }

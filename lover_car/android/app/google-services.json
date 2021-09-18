@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "261618302270",
+    "project_id": "lovercar-abb1b",
+    "storage_bucket": "lovercar-abb1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261618302270:android:198275146b33accd1a006f",
+        "android_client_info": {
+          "package_name": "com.example.lover_car"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261618302270-2odl119ko9468akgqaenfjcr0smdpj2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lover_car",
+            "certificate_hash": "f1682c93dc0f2b43e5fa6160d83f89203b84f7f5"
+          }
+        },
+        {
+          "client_id": "261618302270-5ovj3orfcpmic8e40sit38jfb0rhn50c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3bWE4jPU162Du95EDNu06QC_SG5c_kG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261618302270-5ovj3orfcpmic8e40sit38jfb0rhn50c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

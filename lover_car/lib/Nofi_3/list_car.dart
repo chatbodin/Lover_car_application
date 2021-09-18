@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class List_car extends StatefulWidget {
   @override
   _List_carState createState() => _List_carState();
 }
 
+// ignore: camel_case_types
 class _List_carState extends State<List_car> {
   // ignore: unused_field
   String? _selected;

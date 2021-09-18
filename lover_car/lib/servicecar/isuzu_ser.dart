@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+// ignore: camel_case_types
 class isuzuphayao extends StatefulWidget {
   @override
   _isuzuphayaoState createState() => _isuzuphayaoState();
 }
 
+// ignore: camel_case_types
 class _isuzuphayaoState extends State<isuzuphayao> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -144,11 +146,13 @@ class _isuzuphayaoState extends State<isuzuphayao> {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class isuzulampang extends StatefulWidget {
   @override
   _isuzulampangState createState() => _isuzulampangState();
 }
 
+// ignore: camel_case_types
 class _isuzulampangState extends State<isuzulampang> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -394,11 +398,13 @@ class _isuzulampangState extends State<isuzulampang> {
 
 //////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class isuzulamphun extends StatefulWidget {
   @override
   _isuzulamphunState createState() => _isuzulamphunState();
 }
 
+// ignore: camel_case_types
 class _isuzulamphunState extends State<isuzulamphun> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -497,11 +503,13 @@ class _isuzulamphunState extends State<isuzulamphun> {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class isuzuphrae extends StatefulWidget {
   @override
   _isuzuphraeState createState() => _isuzuphraeState();
 }
 
+// ignore: camel_case_types
 class _isuzuphraeState extends State<isuzuphrae> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -599,11 +607,13 @@ class _isuzuphraeState extends State<isuzuphrae> {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class isuzuchiangrai extends StatefulWidget {
   @override
   _isuzuchiangraiState createState() => _isuzuchiangraiState();
 }
 
+// ignore: camel_case_types
 class _isuzuchiangraiState extends State<isuzuchiangrai> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;

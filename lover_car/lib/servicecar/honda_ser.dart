@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+// ignore: camel_case_types
 class hondaphayao extends StatefulWidget {
   @override
   _hondaphayaoState createState() => _hondaphayaoState();
 }
 
+// ignore: camel_case_types
 class _hondaphayaoState extends State<hondaphayao> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -105,11 +107,13 @@ class _hondaphayaoState extends State<hondaphayao> {
 }
 
 /////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class hondalampang extends StatefulWidget {
   @override
   _hondalampangState createState() => _hondalampangState();
 }
 
+// ignore: camel_case_types
 class _hondalampangState extends State<hondalampang> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -243,11 +247,13 @@ class _hondalampangState extends State<hondalampang> {
 }
 
 //////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class hondalamphun extends StatefulWidget {
   @override
   _hondalamphunState createState() => _hondalamphunState();
 }
 
+// ignore: camel_case_types
 class _hondalamphunState extends State<hondalamphun> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -344,11 +350,13 @@ class _hondalamphunState extends State<hondalamphun> {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class hondaphrae extends StatefulWidget {
   @override
   _hondaphraeState createState() => _hondaphraeState();
 }
 
+// ignore: camel_case_types
 class _hondaphraeState extends State<hondaphrae> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -483,11 +491,13 @@ class _hondaphraeState extends State<hondaphrae> {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class hondachiangrai extends StatefulWidget {
   @override
   _hondachiangraiState createState() => _hondachiangraiState();
 }
 
+// ignore: camel_case_types
 class _hondachiangraiState extends State<hondachiangrai> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;

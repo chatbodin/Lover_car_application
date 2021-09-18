@@ -34,6 +34,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
   }
 
   Widget googleMapUI() {
+    // ignore: non_constant_identifier_names
     return Consumer<LocationProvider>(builder: (ConsumerContext, model, child) {
       // ignore: unnecessary_null_comparison
       if (model.locationPosition != null) {

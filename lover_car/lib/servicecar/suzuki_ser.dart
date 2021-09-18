@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+// ignore: camel_case_types
 class suzukiphayao extends StatefulWidget {
   @override
   _suzukiphayaoState createState() => _suzukiphayaoState();
 }
 
+// ignore: camel_case_types
 class _suzukiphayaoState extends State<suzukiphayao> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -108,11 +110,13 @@ class _suzukiphayaoState extends State<suzukiphayao> {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class suzukilampang extends StatefulWidget {
   @override
   _suzukilampangState createState() => _suzukilampangState();
 }
 
+// ignore: camel_case_types
 class _suzukilampangState extends State<suzukilampang> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -210,11 +214,13 @@ class _suzukilampangState extends State<suzukilampang> {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class suzukilamphun extends StatefulWidget {
   @override
   _suzukilamphunState createState() => _suzukilamphunState();
 }
 
+// ignore: camel_case_types
 class _suzukilamphunState extends State<suzukilamphun> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -312,11 +318,13 @@ class _suzukilamphunState extends State<suzukilamphun> {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class suzukiPhrae extends StatefulWidget {
   @override
   _suzukiPhraeState createState() => _suzukiPhraeState();
 }
 
+// ignore: camel_case_types
 class _suzukiPhraeState extends State<suzukiPhrae> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -417,11 +425,13 @@ class _suzukiPhraeState extends State<suzukiPhrae> {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class suzukiChiangrai extends StatefulWidget {
   @override
   _suzukiChiangraiState createState() => _suzukiChiangraiState();
 }
 
+// ignore: camel_case_types
 class _suzukiChiangraiState extends State<suzukiChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;

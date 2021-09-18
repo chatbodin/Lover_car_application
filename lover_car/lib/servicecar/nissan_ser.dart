@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+// ignore: camel_case_types
 class nissanphayao extends StatefulWidget {
   @override
   _nissanphayaoState createState() => _nissanphayaoState();
 }
 
+// ignore: camel_case_types
 class _nissanphayaoState extends State<nissanphayao> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -143,11 +145,13 @@ class _nissanphayaoState extends State<nissanphayao> {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class nissanlampang extends StatefulWidget {
   @override
   _nissanlampangState createState() => _nissanlampangState();
 }
 
+// ignore: camel_case_types
 class _nissanlampangState extends State<nissanlampang> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -244,11 +248,13 @@ class _nissanlampangState extends State<nissanlampang> {
   }
 }
 
+// ignore: camel_case_types
 class nissanlamphun extends StatefulWidget {
   @override
   _nissanlamphunState createState() => _nissanlamphunState();
 }
 
+// ignore: camel_case_types
 class _nissanlamphunState extends State<nissanlamphun> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -347,11 +353,13 @@ class _nissanlamphunState extends State<nissanlamphun> {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class nissanPhrae extends StatefulWidget {
   @override
   _nissanPhraeState createState() => _nissanPhraeState();
 }
 
+// ignore: camel_case_types
 class _nissanPhraeState extends State<nissanPhrae> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -449,11 +457,13 @@ class _nissanPhraeState extends State<nissanPhrae> {
 }
 ///////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class nissanChiangrai extends StatefulWidget {
   @override
   _nissanChiangraiState createState() => _nissanChiangraiState();
 }
 
+// ignore: camel_case_types
 class _nissanChiangraiState extends State<nissanChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;

@@ -19,6 +19,7 @@ class _SercarState extends State<Sercar> {
     'Nissan',
     'Mazda'
   ];
+  // ignore: non_constant_identifier_names
   final List<String> Toyotaprovince = [
     'Phayao',
     'Lampang',
@@ -26,6 +27,7 @@ class _SercarState extends State<Sercar> {
     'Phrae',
     'ChiangRai'
   ];
+  // ignore: non_constant_identifier_names
   final List<String> Hondaprovince = [
     'Phayao',
     'Lampang',
@@ -33,6 +35,7 @@ class _SercarState extends State<Sercar> {
     'Phrae',
     'ChiangRai'
   ];
+  // ignore: non_constant_identifier_names
   final List<String> Isuzuprovince = [
     'Phayao',
     'Lampang',
@@ -40,6 +43,7 @@ class _SercarState extends State<Sercar> {
     'Phrae',
     'ChiangRai'
   ];
+  // ignore: non_constant_identifier_names
   final List<String> Suzukiprovince = [
     'Phayao',
     'Lampang',
@@ -48,6 +52,7 @@ class _SercarState extends State<Sercar> {
     'ChiangRai'
   ];
 
+  // ignore: non_constant_identifier_names
   final List<String> Mgprovince = [
     'Phayao',
     'Lampang',
@@ -55,6 +60,7 @@ class _SercarState extends State<Sercar> {
     'Phrae',
     'ChiangRai'
   ];
+  // ignore: non_constant_identifier_names
   final List<String> Mitsubishiprovince = [
     'Phayao',
     'Lampang',
@@ -62,6 +68,7 @@ class _SercarState extends State<Sercar> {
     'Phrae',
     'ChiangRai'
   ];
+  // ignore: non_constant_identifier_names
   final List<String> Fordprovince = [
     'Phayao',
     'Lampang',
@@ -69,6 +76,7 @@ class _SercarState extends State<Sercar> {
     'Phrae',
     'ChiangRai'
   ];
+  // ignore: non_constant_identifier_names
   final List<String> Nissanprovince = [
     'Phayao',
     'Lampang',
@@ -76,6 +84,7 @@ class _SercarState extends State<Sercar> {
     'Phrae',
     'ChiangRai'
   ];
+  // ignore: non_constant_identifier_names
   final List<String> Mazdaprovince = [
     'Phayao',
     'Lampang',

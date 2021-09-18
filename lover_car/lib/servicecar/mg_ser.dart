@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+// ignore: camel_case_types
 class mgphayao extends StatefulWidget {
   @override
   _mgphayaoState createState() => _mgphayaoState();
 }
 
+// ignore: camel_case_types
 class _mgphayaoState extends State<mgphayao> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -107,11 +109,13 @@ class _mgphayaoState extends State<mgphayao> {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class mglampang extends StatefulWidget {
   @override
   _mglampangState createState() => _mglampangState();
 }
 
+// ignore: camel_case_types
 class _mglampangState extends State<mglampang> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -210,11 +214,13 @@ class _mglampangState extends State<mglampang> {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class mglamphun extends StatefulWidget {
   @override
   _mglamphunState createState() => _mglamphunState();
 }
 
+// ignore: camel_case_types
 class _mglamphunState extends State<mglamphun> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -312,11 +318,13 @@ class _mglamphunState extends State<mglamphun> {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class mgPhrae extends StatefulWidget {
   @override
   _mgPhraeState createState() => _mgPhraeState();
 }
 
+// ignore: camel_case_types
 class _mgPhraeState extends State<mgPhrae> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -414,11 +422,13 @@ class _mgPhraeState extends State<mgPhrae> {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class mgChiangrai extends StatefulWidget {
   @override
   _mgChiangraiState createState() => _mgChiangraiState();
 }
 
+// ignore: camel_case_types
 class _mgChiangraiState extends State<mgChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;

@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+// ignore: camel_case_types
 class mitsubishiphayao extends StatefulWidget {
   @override
   _mitsubishiphayaoState createState() => _mitsubishiphayaoState();
 }
 
+// ignore: camel_case_types
 class _mitsubishiphayaoState extends State<mitsubishiphayao> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -144,11 +146,13 @@ class _mitsubishiphayaoState extends State<mitsubishiphayao> {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class mitsubishilampang extends StatefulWidget {
   @override
   _mitsubishilampangState createState() => _mitsubishilampangState();
 }
 
+// ignore: camel_case_types
 class _mitsubishilampangState extends State<mitsubishilampang> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -320,11 +324,13 @@ class _mitsubishilampangState extends State<mitsubishilampang> {
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class mitsubishilamphun extends StatefulWidget {
   @override
   _mitsubishilamphunState createState() => _mitsubishilamphunState();
 }
 
+// ignore: camel_case_types
 class _mitsubishilamphunState extends State<mitsubishilamphun> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -422,11 +428,13 @@ class _mitsubishilamphunState extends State<mitsubishilamphun> {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class mitsubishichiangrai extends StatefulWidget {
   @override
   _mitsubishichiangraiState createState() => _mitsubishichiangraiState();
 }
 
+// ignore: camel_case_types
 class _mitsubishichiangraiState extends State<mitsubishichiangrai> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -670,11 +678,13 @@ class _mitsubishichiangraiState extends State<mitsubishichiangrai> {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class mitsubishiphrae extends StatefulWidget {
   @override
   _mitsubishiphraeState createState() => _mitsubishiphraeState();
 }
 
+// ignore: camel_case_types
 class _mitsubishiphraeState extends State<mitsubishiphrae> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;

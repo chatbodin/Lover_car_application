@@ -17,8 +17,7 @@ class _CreateAccountState extends State<CreateAccount> {
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmpassword = TextEditingController();
-  // ignore: unused_field
-  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
   bool isLoading = false;
 
   @override
@@ -34,12 +33,6 @@ class _CreateAccountState extends State<CreateAccount> {
       body: Stack(
         children: [
           Mystyle().buildBackground(screenWidth, screenHeight),
-          SizedBox(
-              height: 180,
-              child: Image.asset(
-                'images/logos.png',
-                fit: BoxFit.contain,
-              )),
           buildContent(),
         ],
       ),
@@ -50,10 +43,9 @@ class _CreateAccountState extends State<CreateAccount> {
     return Center(
       child: isLoading == false
           ? SingleChildScrollView(
-              key: _formkey,
               //คียร์บอร์ดจะไม่overflow
               child: Column(
-                children: <Widget>[
+                children: [
                   buildUser(),
                   buildPassword(),
                   buildConfirmpassword(),
@@ -106,20 +98,8 @@ class _CreateAccountState extends State<CreateAccount> {
     return Container(
       margin: EdgeInsets.only(top: 16),
       width: screenWidth! * 0.70,
-      child: TextFormField(
-        obscureText: true,
-        keyboardType: TextInputType.text,
+      child: TextField(
         controller: _password,
-        validator: (value) {
-          if (value!.isEmpty) {
-            return 'Please a Enter Password';
-          }
-          return null;
-        },
-        // onSaved: ( phone) {
-        //   _phone = phone!;
-        // },
-
         //onChanged: (value) => password = value.trim(),
         decoration: InputDecoration(
           prefixIcon: Icon(
@@ -142,24 +122,9 @@ class _CreateAccountState extends State<CreateAccount> {
     return Container(
       margin: EdgeInsets.only(top: 16),
       width: screenWidth! * 0.70,
-      child: TextFormField(
-        obscureText: true,
-        keyboardType: TextInputType.text,
+      child: TextField(
         controller: _confirmpassword,
-        validator: (value) {
-          if (value!.isEmpty) {
-            return 'Please re-enter password';
-          }
-          print(_password.text);
-
-          print(_confirmpassword.text);
-
-          if (_password.text != _confirmpassword.text) {
-            return "Password does not match";
-          }
-
-          return null;
-        },
+        //onChanged: (value) => password = value.trim(),
         decoration: InputDecoration(
           prefixIcon: Icon(
             Icons.lock_outline,
@@ -188,14 +153,6 @@ class _CreateAccountState extends State<CreateAccount> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           ),
           onPressed: () {
-            if (_formkey.currentState!.validate()) {
-              print("successful");
-
-              return;
-            } else {
-              print("UnSuccessfull");
-            }
-
             setState(() {
               isLoading = true;
             });
@@ -203,7 +160,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 .createAccount(
                     email: _email.text.trim(),
                     password: _password.text.trim(),
-                    confirmpassword: _password.text.trim())
+                    confirmpassword: _confirmpassword..text.trim())
                 .then((value) {
               if (value == "Account created") {
                 setState(() {

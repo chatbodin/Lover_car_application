@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+// ignore: camel_case_types
 class fordphayao extends StatefulWidget {
   @override
   _fordphayaoState createState() => _fordphayaoState();
 }
 
+// ignore: camel_case_types
 class _fordphayaoState extends State<fordphayao> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -144,11 +146,13 @@ class _fordphayaoState extends State<fordphayao> {
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class fordlampang extends StatefulWidget {
   @override
   _fordlampangState createState() => _fordlampangState();
 }
 
+// ignore: camel_case_types
 class _fordlampangState extends State<fordlampang> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -247,11 +251,13 @@ class _fordlampangState extends State<fordlampang> {
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class fordlamphun extends StatefulWidget {
   @override
   _fordlamphunState createState() => _fordlamphunState();
 }
 
+// ignore: camel_case_types
 class _fordlamphunState extends State<fordlamphun> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -350,11 +356,13 @@ class _fordlamphunState extends State<fordlamphun> {
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class fordphrae extends StatefulWidget {
   @override
   _fordphraeState createState() => _fordphraeState();
 }
 
+// ignore: camel_case_types
 class _fordphraeState extends State<fordphrae> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -453,11 +461,13 @@ class _fordphraeState extends State<fordphrae> {
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class fordChiangrai extends StatefulWidget {
   @override
   _fordChiangraiState createState() => _fordChiangraiState();
 }
 
+// ignore: camel_case_types
 class _fordChiangraiState extends State<fordChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;

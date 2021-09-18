@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+// ignore: camel_case_types
 class toyotaserphayao extends StatefulWidget {
   @override
   _toyotaserphayaoState createState() => _toyotaserphayaoState();
 }
 
+// ignore: camel_case_types
 class _toyotaserphayaoState extends State<toyotaserphayao> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -144,11 +146,13 @@ class _toyotaserphayaoState extends State<toyotaserphayao> {
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class toyotaserlampang extends StatefulWidget {
   @override
   _toyotaserlampangState createState() => _toyotaserlampangState();
 }
 
+// ignore: camel_case_types
 class _toyotaserlampangState extends State<toyotaserlampang> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -354,11 +358,13 @@ class _toyotaserlampangState extends State<toyotaserlampang> {
 
 ///////////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class toyotaserlamphun extends StatefulWidget {
   @override
   _toyotaserlamphunState createState() => _toyotaserlamphunState();
 }
 
+// ignore: camel_case_types
 class _toyotaserlamphunState extends State<toyotaserlamphun> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -492,11 +498,13 @@ class _toyotaserlamphunState extends State<toyotaserlamphun> {
 
 ///////////////////////////////////////////////////////////////////////////
 
+// ignore: camel_case_types
 class toyotaserPhrae extends StatefulWidget {
   @override
   _toyotaserPhraeState createState() => _toyotaserPhraeState();
 }
 
+// ignore: camel_case_types
 class _toyotaserPhraeState extends State<toyotaserPhrae> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
@@ -772,11 +780,13 @@ class _toyotaserPhraeState extends State<toyotaserPhrae> {
 }
 
 ////////////////////////////////////////////////////////////////////////////
+// ignore: camel_case_types
 class toyotaseChiangrai extends StatefulWidget {
   @override
   _toyotaseChiangraiState createState() => _toyotaseChiangraiState();
 }
 
+// ignore: camel_case_types
 class _toyotaseChiangraiState extends State<toyotaseChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
