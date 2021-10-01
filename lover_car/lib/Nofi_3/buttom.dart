@@ -11,8 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  late AnimationController _animationController;
-  late Animation _animation;
+   AnimationController _animationController;
+   Animation _animation;
 
   @override
   void initState() {

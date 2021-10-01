@@ -13,10 +13,10 @@ class mazdaphayao extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdaphayaoState extends State<mazdaphayao> {
   Completer<GoogleMapController> _controller = Completer();
-  late GoogleMapController newGoogleMapController;
+   GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-  late Position currentPostion;
+   Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -118,10 +118,10 @@ class mazdalampang extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdalampangState extends State<mazdalampang> {
   Completer<GoogleMapController> _controller = Completer();
-  late GoogleMapController newGoogleMapController;
+   GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-  late Position currentPostion;
+   Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -225,10 +225,10 @@ class mazdalamphun extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdalamphunState extends State<mazdalamphun> {
   Completer<GoogleMapController> _controller = Completer();
-  late GoogleMapController newGoogleMapController;
+   GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-  late Position currentPostion;
+   Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -331,10 +331,10 @@ class mazdaphrae extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdaphraeState extends State<mazdaphrae> {
   Completer<GoogleMapController> _controller = Completer();
-  late GoogleMapController newGoogleMapController;
+   GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-  late Position currentPostion;
+   Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -437,10 +437,10 @@ class mazdaChiangrai extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdaChiangraiState extends State<mazdaChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
-  late GoogleMapController newGoogleMapController;
+   GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-  late Position currentPostion;
+   Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(

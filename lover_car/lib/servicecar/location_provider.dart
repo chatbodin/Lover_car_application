@@ -3,16 +3,16 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
 class LocationProvider with ChangeNotifier {
-  BitmapDescriptor? _pinLocationIcon;
-  BitmapDescriptor get pinLocationIcon => _pinLocationIcon!;
-  Map<MarkerId, Marker>? _markers;
-  Map<MarkerId, Marker> get markers => _markers!;
+  BitmapDescriptor _pinLocationIcon;
+  BitmapDescriptor get pinLocationIcon => _pinLocationIcon;
+  Map<MarkerId, Marker> _markers;
+  Map<MarkerId, Marker> get markers => _markers;
   final MarkerId markerId = MarkerId("1");
 
-  Location? _location;
-  Location get location => _location!;
-  LatLng? _locationPosition;
-  LatLng get locationPosition => _locationPosition!;
+  Location _location;
+  Location get location => _location;
+  LatLng _locationPosition;
+  LatLng get locationPosition => _locationPosition;
 
   bool locationServiceActive = true;
 
@@ -47,7 +47,7 @@ class LocationProvider with ChangeNotifier {
     }
     location.onLocationChanged.listen((LocationData currentLocation) {
       _locationPosition =
-          LatLng(currentLocation.latitude!, currentLocation.longitude!);
+          LatLng(currentLocation.latitude, currentLocation.longitude);
 
       print(_locationPosition);
       _markers = <MarkerId, Marker>{};
@@ -63,7 +63,7 @@ class LocationProvider with ChangeNotifier {
             notifyListeners();
           }));
 
-      _markers![markerId] = marker;
+      _markers[markerId] = marker;
 
       notifyListeners();
     });

@@ -12,7 +12,7 @@ class CreateAccount extends StatefulWidget {
 }
 
 class _CreateAccountState extends State<CreateAccount> {
-  double? screenWidth, screenHeight;
+  double screenWidth, screenHeight;
   //String? typeUser, name, user, password;
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
@@ -73,7 +73,7 @@ class _CreateAccountState extends State<CreateAccount> {
   Container buildUser() {
     return Container(
       margin: EdgeInsets.only(top: 16),
-      width: screenWidth! * 0.70,
+      width: screenWidth * 0.70,
       child: TextField(
         controller: _email,
         //onChanged: (value) => user = value.trim(),
@@ -97,7 +97,7 @@ class _CreateAccountState extends State<CreateAccount> {
   Container buildPassword() {
     return Container(
       margin: EdgeInsets.only(top: 16),
-      width: screenWidth! * 0.70,
+      width: screenWidth * 0.70,
       child: TextField(
         controller: _password,
         //onChanged: (value) => password = value.trim(),
@@ -121,7 +121,7 @@ class _CreateAccountState extends State<CreateAccount> {
   Container buildConfirmpassword() {
     return Container(
       margin: EdgeInsets.only(top: 16),
-      width: screenWidth! * 0.70,
+      width: screenWidth * 0.70,
       child: TextField(
         controller: _confirmpassword,
         //onChanged: (value) => password = value.trim(),
@@ -145,7 +145,7 @@ class _CreateAccountState extends State<CreateAccount> {
   Container buildCreateAccount() {
     return Container(
       margin: EdgeInsets.only(top: 8),
-      width: screenWidth! * 0.6,
+      width: screenWidth * 0.6,
       child: ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
             primary: Mystyle().darkColor,
@@ -175,7 +175,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   isLoading = false;
                 });
                 ScaffoldMessenger.of(context)
-                    .showSnackBar(SnackBar(content: Text(value!)));
+                    .showSnackBar(SnackBar(content: Text(value)));
               }
             });
           },

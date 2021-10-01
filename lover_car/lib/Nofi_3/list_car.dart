@@ -9,7 +9,7 @@ class List_car extends StatefulWidget {
 // ignore: camel_case_types
 class _List_carState extends State<List_car> {
   // ignore: unused_field
-  String? _selected;
+  String _selected;
   // ignore: unused_field
   List<Map> _myJson = [
     {'id': '1', 'image': 'images/toyota.png', 'name': 'Toyota'},
@@ -47,7 +47,7 @@ class _List_carState extends State<List_car> {
                     value: _selected,
                     onChanged: (newValue) {
                       setState(() {
-                        _selected = newValue as String?;
+                        _selected = newValue as String;
                       });
                     },
                     items: _myJson.map((carItem) {

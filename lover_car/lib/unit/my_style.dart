@@ -12,11 +12,10 @@ class Mystyle {
       color: Colors.pink.shade600, fontWeight: FontWeight.w700, fontSize: 17);
 
   Widget showLogo() => Image(
-        
         image: AssetImage('images/logos.png'),
       );
 
-  SafeArea buildBackground(double? screenWidth, double? screenHeight) {
+  SafeArea buildBackground(double screenWidth, double screenHeight) {
     return SafeArea(
       child: Container(
         width: screenWidth,

@@ -6,9 +6,10 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:lover_car/home.dart';
 
 import 'package:lover_car/login/register_screen.dart';
+import 'package:lover_car/login/reset.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -17,7 +18,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   // ignore: unused_field
   final _formKey = GlobalKey<FormState>();
-  double? screenWidth, screenHeight;
+  double screenWidth, screenHeight;
   final TextEditingController emailController = new TextEditingController();
   final TextEditingController passwordController = new TextEditingController();
 
@@ -32,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
         controller: emailController,
         keyboardType: TextInputType.emailAddress,
         validator: (value) {
-          if (value!.isEmpty) {
+          if (value.isEmpty) {
             return ("Please Enter Your Email");
           }
           // reg expression for email validation
@@ -43,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
           return null;
         },
         onSaved: (value) {
-          emailController.text = value!;
+          emailController.text = value;
         },
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
@@ -60,9 +61,10 @@ class _LoginScreenState extends State<LoginScreen> {
         autofocus: false,
         controller: passwordController,
         obscureText: true,
+        // ignore: missing_return
         validator: (value) {
           RegExp regex = new RegExp(r'^.{6,}$');
-          if (value!.isEmpty) {
+          if (value.isEmpty) {
             return ("Password is required for login");
           }
           if (!regex.hasMatch(value)) {
@@ -70,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
           }
         },
         onSaved: (value) {
-          passwordController.text = value!;
+          passwordController.text = value;
         },
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
@@ -167,6 +169,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 15,
                     ),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -187,7 +190,27 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(
                                 color: Colors.redAccent,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 14),
+                                fontSize: 15),
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ResetPage()));
+                          },
+                          child: Text(
+                            "ลืมรหัสผ่าน",
+                            style: TextStyle(
+                                color: Colors.blueAccent,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15),
                           ),
                         )
                       ],
@@ -203,7 +226,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void signIn(String email, String password) async {
-    if (_formKey.currentState!.validate()) {
+    if (_formKey.currentState.validate()) {
       await _auth
           .signInWithEmailAndPassword(email: email, password: password)
           .then((uid) => {
@@ -212,7 +235,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     MaterialPageRoute(builder: (context) => Home())),
               })
           .catchError((e) {
-        Fluttertoast.showToast(msg: e!.message);
+        Fluttertoast.showToast(msg: e.message);
       });
     }
   }

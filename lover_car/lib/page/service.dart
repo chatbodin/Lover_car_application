@@ -93,8 +93,8 @@ class _SercarState extends State<Sercar> {
     'ChiangRai'
   ];
 
-  String? selectedtypecar;
-  String? selectedprovince;
+  String selectedtypecar;
+  String selectedprovince;
   List<String> providers = [];
 
   @override

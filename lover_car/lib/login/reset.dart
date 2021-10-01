@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lover_car/login/auth_provider.dart';
-import 'package:lover_car/login/authen.dart';
+
+import 'package:lover_car/login/login_screen.dart';
 
 import 'package:lover_car/unit/my_style.dart';
 
@@ -12,15 +13,15 @@ class ResetPage extends StatefulWidget {
 }
 
 class _ResetPageState extends State<ResetPage> {
-  double? screenWidth, screenHeight;
-  String? typeUser, name, user, password;
+  double screenWidth, screenHeight;
+  String typeUser, name, user, password;
   TextEditingController _email = TextEditingController();
-  bool? isLoading = false;
+  bool isLoading = false;
 
   Container buildUser() {
     return Container(
       margin: EdgeInsets.only(top: 16),
-      width: screenWidth! * 0.70,
+      width: screenWidth * 0.70,
       child: TextField(
         controller: _email,
         onChanged: (value) => user = value.trim(),
@@ -74,8 +75,10 @@ class _ResetPageState extends State<ResetPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Authen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()));
                     },
                     child: Text(
                       "กลับไปหน้าเมนูหลัก ",
@@ -92,7 +95,7 @@ class _ResetPageState extends State<ResetPage> {
   Container resetAccount() {
     return Container(
       margin: EdgeInsets.only(top: 8),
-      width: screenWidth! * 0.6,
+      width: screenWidth * 0.6,
       child: ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
             primary: Mystyle().darkColor,
@@ -114,7 +117,7 @@ class _ResetPageState extends State<ResetPage> {
                 });
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => Authen()),
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
                     (route) => false);
               } else {
                 setState(() {

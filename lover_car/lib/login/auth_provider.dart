@@ -6,8 +6,9 @@ class AuthClass {
   FirebaseAuth auth = FirebaseAuth.instance;
 
   //Create Account
-  Future<String?> createAccount(
-      {required email, required password, required confirmpassword}) async {
+  // ignore: missing_return
+  Future<String> createAccount(
+      { email,  password,  confirmpassword}) async {
     try {
       await auth.createUserWithEmailAndPassword(
         email: email,
@@ -27,9 +28,10 @@ class AuthClass {
   }
 
   //Sign in user
-  Future<String?> signIN(
-      {required String email,
-      required String password,
+  // ignore: missing_return
+  Future<String> signIN(
+      { String email,
+       String password,
       }) async {
     try {
       await auth.signInWithEmailAndPassword(
@@ -48,7 +50,7 @@ class AuthClass {
   }
 
   //Reset Password
-  Future<String> resetPassword({required String email}) async {
+  Future<String> resetPassword({ String email}) async {
     try {
       await auth.sendPasswordResetEmail(email: email);
       return "Email sent";
@@ -63,11 +65,11 @@ class AuthClass {
   }
 
   Future<UserCredential> signWithGoogle() async {
-    final GoogleSignInAccount? googleUser =
+    final GoogleSignInAccount googleUser =
         await GoogleSignIn(scopes: <String>["email"]).signIn();
 
     final GoogleSignInAuthentication googleAuth =
-        await googleUser!.authentication;
+        await googleUser.authentication;
 
     final OAuthCredential credential = GoogleAuthProvider.credential(
       accessToken: googleAuth.accessToken,

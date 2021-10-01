@@ -10,9 +10,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String? user = FirebaseAuth.instance.currentUser!.email == null
-      ? FirebaseAuth.instance.currentUser!.phoneNumber
-      : FirebaseAuth.instance.currentUser!.email;
+  String user = FirebaseAuth.instance.currentUser.email == null
+      ? FirebaseAuth.instance.currentUser.phoneNumber
+      : FirebaseAuth.instance.currentUser.email;
 
   @override
   Widget build(BuildContext context) {

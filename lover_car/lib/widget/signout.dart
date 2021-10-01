@@ -39,63 +39,81 @@ class MySignOut extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 2,
+            height: 4,
           ),
           ListTile(
             leading:
-                Icon(Icons.assessment_outlined, size: 30, color: Colors.white),
+                Icon(Icons.assessment_outlined, size: 30, color: Colors.black),
             title: Text(
               'ค่าใช้จ่ายการเติมน้ำมัน',
               style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
-            tileColor: Colors.blueGrey.shade700,
+            tileColor: Colors.blueGrey.shade50,
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => HomePage()));
             },
           ),
           SizedBox(
-            height: 2,
+            height: 4,
           ),
           ListTile(
             leading:
-                Icon(Icons.calculate_outlined, size: 30, color: Colors.white),
+                Icon(Icons.calculate_outlined, size: 30, color: Colors.black),
             title: Text(
               'คํานวณอัตราสิ้นเปลืองน้ำมัน',
               style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
-            tileColor: Colors.blueGrey.shade700,
+            tileColor: Colors.blueGrey.shade50,
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => HomePage()));
             },
           ),
           SizedBox(
-            height: 2,
+            height: 4,
           ),
           ListTile(
-            leading: Icon(Icons.settings, size: 30, color: Colors.white),
+            leading: Icon(Icons.list, size: 30, color: Colors.black),
+            title: Text(
+              'เกี่ยวกับ CarLovers',
+              style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
+            tileColor: Colors.blueGrey.shade50,
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          ListTile(
+            leading: Icon(Icons.settings, size: 30, color: Colors.black),
             title: Text(
               'ตั้งค่า',
               style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
-            tileColor: Colors.blueGrey.shade700,
+            tileColor: Colors.blueGrey.shade50,
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => HomePage()));
             },
           ),
           SizedBox(
-            height: 2,
+            height: 3,
           ),
           ListTile(
             onTap: () {
@@ -107,17 +125,17 @@ class MySignOut extends StatelessWidget {
             },
             leading: Icon(
               Icons.exit_to_app,
-              color: Colors.white,
+              color: Colors.black,
               size: 30,
             ),
             title: Text(
               'Sign Out',
               style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
-            tileColor: Colors.red.shade500,
+            tileColor: Colors.red.shade400,
           ),
         ],
       ),

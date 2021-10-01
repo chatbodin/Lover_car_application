@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'location_provider.dart';
 
 class GoogleMapPage extends StatefulWidget {
-  const GoogleMapPage({Key? key}) : super(key: key);
+  const GoogleMapPage({Key key}) : super(key: key);
 
   @override
   _GoogleMapPageState createState() => _GoogleMapPageState();

@@ -16,8 +16,8 @@ class Authen extends StatefulWidget {
 }
 
 class _AuthenState extends State<Authen> {
-  double? screenWidth, screenHeight;
-  bool? redEye = true, isLoading = false;
+  double screenWidth, screenHeight;
+  bool redEye = true, isLoading = false;
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
   
@@ -90,13 +90,13 @@ class _AuthenState extends State<Authen> {
 
   Container buildSignInGoogle() => Container(
         margin: EdgeInsets.only(top: 80),
-        width: screenWidth! * 0.6,
+        width: screenWidth * 0.6,
         child: SignInButton(
           Buttons.GoogleDark,
           onPressed: () {
             //Sign In with google
             AuthClass().signWithGoogle().then((UserCredential value) {
-              final displayName = value.user!.displayName;
+              final displayName = value.user.displayName;
 
               print(displayName);
 
@@ -114,7 +114,7 @@ class _AuthenState extends State<Authen> {
 
   Container buildSignInFacebook() => Container(
         margin: EdgeInsets.only(top: 5),
-        width: screenWidth! * 0.6,
+        width: screenWidth * 0.6,
         child: SignInButton(
           Buttons.FacebookNew,
           onPressed: () {
@@ -134,7 +134,7 @@ class _AuthenState extends State<Authen> {
   Container buildUser() {
     return Container(
       margin: EdgeInsets.only(top: 10),
-      width: screenWidth! * 0.67,
+      width: screenWidth * 0.67,
       child: TextField(
         controller: _email,
         decoration: InputDecoration(
@@ -157,21 +157,21 @@ class _AuthenState extends State<Authen> {
   Container buildPassword() {
     return Container(
       margin: EdgeInsets.only(top: 16),
-      width: screenWidth! * 0.67,
+      width: screenWidth * 0.67,
       child: TextField(
         controller: _password,
-        obscureText: redEye!,
+        obscureText: redEye,
         decoration: InputDecoration(
           suffixIcon: IconButton(
               icon: Icon(
-                redEye!
+                redEye
                     ? Icons.remove_red_eye_outlined
                     : Icons.remove_red_eye_sharp,
                 color: Mystyle().darkColor,
               ),
               onPressed: () {
                 setState(() {
-                  redEye = !redEye!;
+                  redEye = !redEye;
                 });
               }),
           prefixIcon: Icon(
@@ -192,8 +192,8 @@ class _AuthenState extends State<Authen> {
 
   Container buildLogin() => Container(
         margin: EdgeInsets.only(top: 8),
-        width: screenWidth! * 0.4,
-        height: screenHeight! * 0.07,
+        width: screenWidth * 0.4,
+        height: screenHeight * 0.07,
         child: TextButton(
           onPressed: () {
             setState(() {
@@ -216,7 +216,7 @@ class _AuthenState extends State<Authen> {
                   isLoading = false;
                 });
                 ScaffoldMessenger.of(context)
-                    .showSnackBar(SnackBar(content: Text(value!)));
+                    .showSnackBar(SnackBar(content: Text(value)));
               }
             });
           },
@@ -237,7 +237,7 @@ class _AuthenState extends State<Authen> {
 
   Container buildLogo() {
     return Container(
-      width: screenWidth! * 0.4,
+      width: screenWidth * 0.4,
       child: Mystyle().showLogo(),
     );
   }
