@@ -16,12 +16,11 @@ class _List_carState extends State<List_car> {
     {'id': '2', 'image': 'images/honda.png', 'name': 'Honda'},
     {'id': '3', 'image': 'images/isuzu.png', 'name': 'Isuzu'},
     {'id': '4', 'image': 'images/suzuki.png', 'name': 'Suzuki'},
-    {'id': '5', 'image': 'images/benz.png', 'name': 'Benz'},
-    {'id': '6', 'image': 'images/mg.png', 'name': 'Mg'},
-    {'id': '7', 'image': 'images/mitsubishi.png', 'name': 'Mitsubishi'},
-    {'id': '8', 'image': 'images/ford.png', 'name': 'Ford'},
-    {'id': '9', 'image': 'images/nissan.png', 'name': 'Nissan'},
-    {'id': '10', 'image': 'images/mazda.png', 'name': 'Mazda'},
+    {'id': '5', 'image': 'images/mg.png', 'name': 'Mg'},
+    {'id': '6', 'image': 'images/mitsubishi.png', 'name': 'Mitsubishi'},
+    {'id': '7', 'image': 'images/ford.png', 'name': 'Ford'},
+    {'id': '8', 'image': 'images/nissan.png', 'name': 'Nissan'},
+    {'id': '9', 'image': 'images/mazda.png', 'name': 'Mazda'},
   ];
 
   @override
@@ -31,7 +30,7 @@ class _List_carState extends State<List_car> {
       appBar: AppBar(),
       body: Center(
         child: Container(
-          padding: EdgeInsets.only(left: 8,right: 8),
+          padding: EdgeInsets.only(left: 8, right: 8),
           decoration: BoxDecoration(
               border: Border.all(width: 1, color: Colors.grey),
               borderRadius: BorderRadius.circular(10)),
@@ -65,7 +64,8 @@ class _List_carState extends State<List_car> {
                     }).toList(),
                   ),
                 ),
-              ))
+              )
+              )
             ],
           ),
         ),

@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
    <application
-        android:label="lover_car"
+        android:label="CarLovers"
         android:icon="@mipmap/ic_launcher">
 
         <meta-data android:name="com.google.android.geo.API_KEY"

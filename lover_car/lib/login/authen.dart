@@ -2,13 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
-import 'package:lover_car/home.dart';
-import 'package:lover_car/login/auth_provider.dart';
-import 'package:lover_car/login/create_account.dart';
-
-import 'package:lover_car/login/reset.dart';
-
-import 'package:lover_car/unit/my_style.dart';
+import 'package:car_lovers/home.dart';
+import 'package:car_lovers/login/auth_provider.dart';
+import 'package:car_lovers/login/create_account.dart';
+import 'package:car_lovers/login/reset.dart';
+import 'package:car_lovers/unit/my_style.dart';
 
 class Authen extends StatefulWidget {
   @override

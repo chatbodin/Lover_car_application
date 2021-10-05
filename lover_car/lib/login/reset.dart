@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lover_car/login/auth_provider.dart';
-
-import 'package:lover_car/login/login_screen.dart';
-
-import 'package:lover_car/unit/my_style.dart';
+import 'package:car_lovers/login/auth_provider.dart';
+import 'package:car_lovers/login/login_screen.dart';
+import 'package:car_lovers/unit/my_style.dart';
 
 class ResetPage extends StatefulWidget {
   //const CreateAccount({Key? key}) : super(key: key);

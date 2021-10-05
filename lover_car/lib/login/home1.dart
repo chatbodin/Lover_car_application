@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lover_car/login/auth_provider.dart';
-import 'package:lover_car/login/authen.dart';
+import 'package:car_lovers/login/auth_provider.dart';
+import 'package:car_lovers/login/authen.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home-page';

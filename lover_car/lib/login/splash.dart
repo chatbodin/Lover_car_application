@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lover_car/home.dart';
-import 'package:lover_car/login/authen.dart';
+import 'package:car_lovers/home.dart';
+import 'package:car_lovers/login/authen.dart';
 
 
 class Splash extends StatefulWidget {

@@ -1,12 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:lover_car/home.dart';
-
-import 'package:lover_car/login/register_screen.dart';
-import 'package:lover_car/login/reset.dart';
+import 'package:car_lovers/home.dart';
+import 'package:car_lovers/login/register_screen.dart';
+import 'package:car_lovers/login/reset.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key key}) : super(key: key);

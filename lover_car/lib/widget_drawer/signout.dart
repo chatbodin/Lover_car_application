@@ -1,8 +1,11 @@
+import 'package:car_lovers/login/auth_provider.dart';
+import 'package:car_lovers/login/login_screen.dart';
+import 'package:car_lovers/widget_drawer/setthing_apps.dart';
 import 'package:flutter/material.dart';
-import 'package:lover_car/login/auth_provider.dart';
-import 'package:lover_car/login/home1.dart';
 
-import 'package:lover_car/login/login_screen.dart';
+import 'about_app.dart';
+
+import 'calculate_sum_fuel.dart';
 
 // ignore: unused_import
 
@@ -54,28 +57,28 @@ class MySignOut extends StatelessWidget {
             tileColor: Colors.blueGrey.shade50,
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
+                  context, MaterialPageRoute(builder: (context) => SumFuel()));
             },
           ),
-          SizedBox(
-            height: 4,
-          ),
-          ListTile(
-            leading:
-                Icon(Icons.calculate_outlined, size: 30, color: Colors.black),
-            title: Text(
-              'คํานวณอัตราสิ้นเปลืองน้ำมัน',
-              style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold),
-            ),
-            tileColor: Colors.blueGrey.shade50,
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
-            },
-          ),
+          // SizedBox(
+          //   height: 4,
+          // ),
+          // ListTile(
+          //   leading:
+          //       Icon(Icons.calculate_outlined, size: 30, color: Colors.black),
+          //   title: Text(
+          //     'คํานวณอัตราสิ้นเปลืองน้ำมัน',
+          //     style: TextStyle(
+          //         fontSize: 16,
+          //         color: Colors.black,
+          //         fontWeight: FontWeight.bold),
+          //   ),
+          //   tileColor: Colors.blueGrey.shade50,
+          //   onTap: () {
+          //     Navigator.push(context,
+          //         MaterialPageRoute(builder: (context) => CalculateFuel()));
+          //   },
+          // ),
           SizedBox(
             height: 4,
           ),
@@ -90,8 +93,8 @@ class MySignOut extends StatelessWidget {
             ),
             tileColor: Colors.blueGrey.shade50,
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => About_app()));
             },
           ),
           SizedBox(
@@ -108,8 +111,8 @@ class MySignOut extends StatelessWidget {
             ),
             tileColor: Colors.blueGrey.shade50,
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Setthing_app()));
             },
           ),
           SizedBox(

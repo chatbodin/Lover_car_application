@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lover_car/servicecar/google_map_page.dart';
-
-import 'package:lover_car/servicecar/location_provider.dart';
+import 'package:car_lovers/servicecar/google_map_page.dart';
+import 'package:car_lovers/servicecar/location_provider.dart';
 
 import 'package:provider/provider.dart';
 

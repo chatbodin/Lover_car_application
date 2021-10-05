@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lover_car/unit/my_style.dart';
+import 'package:car_lovers/unit/my_style.dart';
 
 Future<Null> normalDialog(
     BuildContext context, String title, String message) async {
