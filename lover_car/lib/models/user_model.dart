@@ -34,3 +34,31 @@ class Datacar {
 
   Datacar({this.carCompany, this.carModel, this.carPlate});
 }
+
+class DataService {
+  String odometer;
+  String price;
+  String notes;
+
+  DataService({this.odometer, this.price, this.notes});
+}
+
+
+class Datafuel {
+  String odometer;
+  String price;
+  String alldistance;
+  String summary;
+  String ratefuel;
+  String notes;
+
+  Datafuel({this.odometer, this.price,this.alldistance,this.summary,this.ratefuel, this.notes});
+}
+
+
+class DataNofication {
+  String odometer;
+  String notes;
+
+  DataNofication({this.odometer,  this.notes});
+}

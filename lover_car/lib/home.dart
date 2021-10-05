@@ -1,4 +1,3 @@
-import 'package:car_lovers/login/data_car.dart';
 import 'package:flutter/material.dart';
 import 'package:car_lovers/page/history.dart';
 
@@ -6,6 +5,8 @@ import 'package:car_lovers/page/oil.dart';
 import 'package:car_lovers/page/service.dart';
 import 'package:car_lovers/page/sum_oil.dart';
 import 'package:car_lovers/page/tel.dart';
+
+import 'Nofi_calculate/add_fuel.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _HomeState extends State<Home> {
     History(),
     Oil(),
     Sumary(),
-    Data_cars(),
+    AddFuel_car(),
     Tel(),
     Sercar(),
   ];
@@ -96,7 +97,7 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        currentScreen = Data_cars();
+                        currentScreen = AddFuel_car();
                         currentTab = 2;
                       });
                     },

@@ -1,3 +1,4 @@
+import 'package:car_lovers/widget_drawer/signout.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +15,11 @@ class _HistoryState extends State<History> {
         title: Text('ประวัติการใช้งาน'),
         backgroundColor: Colors.blue.shade800,
       ),
+      drawer: Drawer(
+        child: MySignOut(),
+      ),
       body: StreamBuilder(
-        stream: FirebaseFirestore.instance.collection("datacar").snapshots(),
+        stream: FirebaseFirestore.instance.collection("dataFuel").snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return Center(
@@ -27,23 +31,21 @@ class _HistoryState extends State<History> {
                 return Container(
                   child: ListTile(
                     leading: CircleAvatar(
-                      radius: 30,
+                      radius: 20,
                       child: FittedBox(
                         child: Image.asset('images/addfuel.png'),
                         fit: BoxFit.fill,
                       ),
                     ),
-                    title: Text(document["carCompany"] + document["carModel"]),
-                    subtitle: Text(document["carPlate"]),
+                    title: Text("เติมเชื้อเพลิง"),
+                    subtitle: Text(document["odometer"]),
                   ),
                 );
               }).toList(),
             );
           }
         },
-        
       ),
-      
     );
   }
 }

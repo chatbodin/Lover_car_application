@@ -38,6 +38,7 @@ class _Data_carsState extends State<Data_cars> {
             return Scaffold(
               appBar: AppBar(
                 title: Text("ข้อมูลรถยนต์"),
+                backgroundColor: Colors.blue.shade800,
               ),
               body: Container(
                 padding: EdgeInsets.all(20),
