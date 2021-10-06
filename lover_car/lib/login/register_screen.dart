@@ -197,48 +197,52 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           },
         ),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Container(
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.all(36),
-              child: Form(
-                key: _formkey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                        height: 180,
-                        child: Image.asset(
-                          'images/logos.png',
-                          fit: BoxFit.contain,
-                        )),
-                    SizedBox(height: 45),
-                    firstNameField,
-                    SizedBox(height: 20),
-                    secondNameField,
-                    SizedBox(
-                      height: 25,
-                    ),
-                    emailField,
-                    SizedBox(
-                      height: 20,
-                    ),
-                    passwordField,
-                    SizedBox(
-                      height: 20,
-                    ),
-                    confirmpasswordField,
-                    SizedBox(
-                      height: 20,
-                    ),
-                    signUpButton,
-                    SizedBox(
-                      height: 15,
-                    ),
-                  ],
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
+        behavior: HitTestBehavior.opaque,
+        child: Center(
+          child: SingleChildScrollView(
+            child: Container(
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(36),
+                child: Form(
+                  key: _formkey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(
+                          height: 180,
+                          child: Image.asset(
+                            'images/logos.png',
+                            fit: BoxFit.contain,
+                          )),
+                      SizedBox(height: 45),
+                      firstNameField,
+                      SizedBox(height: 20),
+                      secondNameField,
+                      SizedBox(
+                        height: 25,
+                      ),
+                      emailField,
+                      SizedBox(
+                        height: 20,
+                      ),
+                      passwordField,
+                      SizedBox(
+                        height: 20,
+                      ),
+                      confirmpasswordField,
+                      SizedBox(
+                        height: 20,
+                      ),
+                      signUpButton,
+                      SizedBox(
+                        height: 15,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -43,7 +43,6 @@ class DataService {
   DataService({this.odometer, this.price, this.notes});
 }
 
-
 class Datafuel {
   String odometer;
   String price;
@@ -51,14 +50,22 @@ class Datafuel {
   String summary;
   String ratefuel;
   String notes;
+  String preiceFulePerLit;
 
-  Datafuel({this.odometer, this.price,this.alldistance,this.summary,this.ratefuel, this.notes});
+  Datafuel({
+    this.odometer,
+    this.price,
+    this.alldistance,
+    this.summary,
+    this.ratefuel,
+    this.notes,
+    this.preiceFulePerLit,
+  });
 }
-
 
 class DataNofication {
   String odometer;
   String notes;
 
-  DataNofication({this.odometer,  this.notes});
+  DataNofication({this.odometer, this.notes});
 }
