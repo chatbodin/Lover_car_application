@@ -50,7 +50,7 @@ class _Ser_carsState extends State<Ser_cars> {
                       children: [
                         Text(
                           "ระยะทาง/(Km)",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 15),
                         ),
                         TextFormField(
                           validator: RequiredValidator(
@@ -65,7 +65,7 @@ class _Ser_carsState extends State<Ser_cars> {
                         ),
                         Text(
                           "ค่าบริการ",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 15),
                         ),
                         TextFormField(
                           // validator:
@@ -80,7 +80,7 @@ class _Ser_carsState extends State<Ser_cars> {
                         ),
                         Text(
                           "หมายเหตุ",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 15),
                         ),
                         TextFormField(
                           // validator: RequiredValidator(

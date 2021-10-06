@@ -50,7 +50,7 @@ class _Nofi_carState extends State<Nofi_car> {
                       children: [
                         Text(
                           "ระยะทาง/(Km)",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 15),
                         ),
                         TextFormField(
                           validator: RequiredValidator(
@@ -65,7 +65,7 @@ class _Nofi_carState extends State<Nofi_car> {
                         ),
                         Text(
                           "หมายเหตุ",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 15),
                         ),
                         TextFormField(
                           // validator: RequiredValidator(
