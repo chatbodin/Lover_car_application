@@ -18,6 +18,7 @@ class _HistoryState extends State<History> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     findUidUser();
@@ -44,6 +45,7 @@ class _HistoryState extends State<History> {
   Widget createFuelWidget(DataFuleModel model) => Text(model.remark);
 
   Future<void> findUidUser() async {
+    // ignore: await_only_futures
     await FirebaseAuth.instance.authStateChanges().listen((event) {
       setState(() {
         uidUser = event.uid;

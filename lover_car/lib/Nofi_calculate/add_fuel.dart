@@ -21,6 +21,7 @@ class _AddFuel_carState extends State<AddFuel_car> {
   final formKey = GlobalKey<FormState>();
   Datafuel dataFuel = Datafuel();
   final Future<FirebaseApp> firebase = Firebase.initializeApp();
+  // ignore: unused_field
   CollectionReference _datadataFuelCollection =
       FirebaseFirestore.instance.collection("dataFuel");
 
@@ -34,14 +35,17 @@ class _AddFuel_carState extends State<AddFuel_car> {
   TextEditingController remarkController = TextEditingController();
 
   List<String> typeFuels = [
-    'มันเบนซิน 91',
-    'มันเบนซิน 95',
-    'แก๊สโซฮอล์ 91',
-    'แก๊สโซฮอล์ 95',
-    'แก๊สโซฮอล์ E20',
-    'แก๊สโซฮอล์ E85',
-    'ไบโอดีเซล',
-    'LPG'
+    'แก๊สโซฮอล์95',
+    'แก๊สโซฮอล์91'
+        'แก๊สโซฮอล์E20',
+    'แก๊สโซฮอล์E85',
+    'เบนซิน95',
+    'ดีเซล',
+    'ดีเซลB7',
+    'ดีเซลB20',
+    'ดีเซลพรีเมี่ยม',
+    'แก๊สNGV',
+    'อื่นๆ'
   ];
 
   String typeFuel;

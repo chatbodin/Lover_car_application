@@ -67,5 +67,5 @@ class DataNofication {
   String odometer;
   String notes;
 
-  DataNofication({this.odometer, this.notes});
+  DataNofication({this.odometer, this.notes, String typeNoficationService, typeNoficationTax, String remark});
 }
