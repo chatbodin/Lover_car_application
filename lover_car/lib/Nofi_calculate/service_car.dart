@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:car_lovers/models/dataservice_model.dart';
 import 'package:car_lovers/models/user_model.dart';
+import 'package:car_lovers/unit/dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -91,7 +92,7 @@ class _Ser_carsState extends State<Ser_cars> {
           if (snapshot.connectionState == ConnectionState.done) {
             return Scaffold(
               appBar: AppBar(
-                title: Text("เติมเชื้อเพลิง"),
+                title: Text("บริการ"),
                 backgroundColor: Colors.purple,
               ),
               body: GestureDetector(
@@ -106,7 +107,7 @@ class _Ser_carsState extends State<Ser_cars> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           buildShowTime2(),
-                          buildTitle('บริการ'),
+                          buildTitle('กรุณาเลือกบริการ'),
                           buildDropdown(),
                           buildTitle('ระยะทางที่แสดงบนไมล์/(Km)'),
                           fieldOdometer(),
@@ -146,40 +147,35 @@ class _Ser_carsState extends State<Ser_cars> {
 
               Timestamp timestamp = Timestamp.fromDate(dateTime);
 
-              DataServiceModel model = DataServiceModel(
-                  chooseDate: timestamp,
-                  typeService: typeService,
-                  odometer: int.parse(odometerController.text),
-                  price: int.parse(priceController.text),
-                  remark: remarkController.text);
+              if (typeService != null) {
+                DataServiceModel model = DataServiceModel(
+                    chooseDate: timestamp,
+                    typeService: typeService,
+                    odometer: int.parse(odometerController.text),
+                    price: int.parse(priceController.text),
+                    remark: remarkController.text);
 
-              await FirebaseFirestore.instance
-                  .collection('users')
-                  .doc(uidUser)
-                  .collection('dataService')
-                  .doc()
-                  .set(model.toMap())
-                  .then((value) => Navigator.pop(context));
+                await FirebaseFirestore.instance
+                    .collection('users')
+                    .doc(uidUser)
+                    .collection('dataService')
+                    .doc()
+                    .set(model.toMap())
+                    .then((value) => Navigator.pop(context));
 
-              //การ Insert Dataแบบเก่า
-              // await _datadataFuelCollection.add({
-              //   "odometer": dataFuel.odometer,
-              //   "price": dataFuel.price,
-              //   "alldistance": dataFuel.alldistance,
-              //   "summary": dataFuel.summary,
-              //   "ratefuel": dataFuel.ratefuel,
-              //   "notes": dataFuel.notes,
-              //   "chooseDate": timestamp,
-              //   "uidUser": uidUser,
-              // });
-              formKey.currentState.reset();
-            }
+                formKey.currentState.reset();
+              } else {
+                normalDialog(context, 'ยังไม่ได้เลือกชนิดบริการ',
+                    'กรุณาเลือกชนิดบริการ');
+              }
+            } //endif
           }),
     );
   }
 
   TextFormField billdRemark() {
     return TextFormField(
+      controller: remarkController,
       decoration: InputDecoration(border: OutlineInputBorder()),
       // validator: RequiredValidator(
       //     errorText: "กรุณากรอกเลขป้ายทะเบียน"),
@@ -220,7 +216,7 @@ class _Ser_carsState extends State<Ser_cars> {
           typeService = value;
         });
       },
-      hint: Text('กรุณาเลือกชนิดน้ำมันเชื้อเพลิง'),
+      hint: Text('กรุณาเลือกชนิดของบริการ'),
       value: typeService,
       items: typeServices
           .map(

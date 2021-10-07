@@ -139,6 +139,7 @@ class _Nofi_carState extends State<Nofi_car> {
             if (formKey.currentState.validate()) {
               formKey.currentState.save();
 
+              // ignore: unused_local_variable
               DataNofication model = DataNofication(
                   typeNoficationService: typeNoficationService,
                   typeNoficationTax: typeNoficationTax,

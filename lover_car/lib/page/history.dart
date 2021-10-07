@@ -1,9 +1,16 @@
+// ignore: unused_import
+import 'dart:ffi';
+// ignore: unused_import
+import 'dart:ui';
 import 'package:car_lovers/models/datafule_model.dart';
+import 'package:car_lovers/models/dataservice_model.dart';
+import 'package:car_lovers/page/edit_service.dart';
 import 'package:car_lovers/widget_drawer/signout.dart';
 import 'package:car_lovers/widgets/show_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 
 class History extends StatefulWidget {
@@ -14,21 +21,55 @@ class History extends StatefulWidget {
 class _HistoryState extends State<History> {
   String uidUser;
   bool load = true;
+
   List<DataFuleModel> dataFuleModels = [];
   List<Widget> fuelWidgets = [];
+  List<String> docIdFuels = [];
+
+  List<DataServiceModel> dataServiceModels = [];
+  List<Widget> dataServiceWidgets = [];
+  List<String> docIdServices = [];
+
+//about Nofi
+
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+
+  AndroidInitializationSettings androidInitializationSettings;
+  InitializationSettings initializationSettings;
+
+  DateTime serviceNotiDateTime;
 
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
+    initialNofication();
     findUidUser();
+  }
+
+  Future<void> initialNofication() async {
+    androidInitializationSettings = AndroidInitializationSettings('app_icon');
+    initializationSettings =
+        InitializationSettings(android: androidInitializationSettings);
+    await flutterLocalNotificationsPlugin.initialize(
+      initializationSettings,
+      onSelectNotification: onSelectNotification,
+    );
+  }
+
+  Future<void> onSelectNotification(String payload) async {
+    if (payload != null) {
+      print('####payload ==>> $payload');
+    }
   }
 
   Future<void> readAllFuel() async {
     if (dataFuleModels.isNotEmpty) {
       dataFuleModels.clear();
       fuelWidgets.clear();
+      docIdFuels.clear();
     }
 
     await FirebaseFirestore.instance
@@ -43,6 +84,7 @@ class _HistoryState extends State<History> {
         setState(() {
           dataFuleModels.add(model);
           fuelWidgets.add(createFuelWidget(model));
+          docIdFuels.add(item.id);
         });
       }
     });
@@ -66,6 +108,24 @@ class _HistoryState extends State<History> {
                   Text('${model.odometer} Km'),
                 ],
               ),
+              Column(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.edit,
+                      color: Colors.green,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
@@ -78,9 +138,106 @@ class _HistoryState extends State<History> {
         uidUser = event.uid;
         load = false;
         readAllFuel();
+        readAllDataService();
       });
     });
   }
+
+  Future<void> readAllDataService() async {
+    if (dataServiceModels.isNotEmpty) {
+      dataServiceModels.clear();
+      dataServiceWidgets.clear();
+      docIdServices.clear();
+    }
+
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(uidUser)
+        .collection('dataService')
+        .orderBy('chooseDate')
+        .get()
+        .then((value) {
+      int indexDataService = 0;
+      for (var item in value.docs) {
+        print('#### item ==> ${item.data()}');
+        DataServiceModel model = DataServiceModel.fromMap(item.data());
+        setState(() {
+          dataServiceModels.add(model);
+          dataServiceWidgets
+              .add(createDataServiceWidget(model, indexDataService));
+          docIdServices.add(item.id);
+        });
+        indexDataService++;
+      }
+      DateTime currentDateTime = DateTime.now();
+      serviceNotiDateTime = dataServiceModels[0].chooseDate.toDate();
+
+      serviceNotiDateTime = DateTime(
+        serviceNotiDateTime.year,
+        serviceNotiDateTime.month,
+        serviceNotiDateTime.day,
+        currentDateTime.hour,
+        currentDateTime.minute,
+        currentDateTime.second + 20,
+      );
+      print('#### serviceNotiDate ==>> $serviceNotiDateTime');
+      myNotification();
+    });
+  }
+
+  Widget createDataServiceWidget(
+          DataServiceModel model, int indexDataService) =>
+      Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                children: [
+                  Text(model.typeService),
+                  Text("${model.price} บาท"),
+                ],
+              ),
+              Column(
+                children: [
+                  Text(changeTimeToString(model.chooseDate)),
+                  Text("${model.odometer} Km"),
+                ],
+              ),
+              Column(
+                children: [
+                  IconButton(
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EditService(
+                            docId: docIdServices[indexDataService],
+                            uidUser: uidUser,
+                          ),
+                        )).then((value) => readAllDataService()),
+                    icon: Icon(
+                      Icons.edit,
+                      color: Colors.green,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      print(
+                          '### You Delete indexDataService ==>$indexDataService');
+                      confirmDeleteService(indexDataService);
+                    },
+                    icon: Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -93,15 +250,65 @@ class _HistoryState extends State<History> {
       drawer: Drawer(
         child: MySignOut(),
       ),
-      body: load
-          ? Center(child: CircularProgressIndicator())
-          : SingleChildScrollView(
-            child: ExpansionTile(
+      body: load ? Center(child: CircularProgressIndicator()) : showContent(),
+    );
+  }
+
+  SingleChildScrollView showContent() {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ExpansionTile(
+                leading: ShowImage(path: 'images/servicecar.png'),
+                title: Text('บริการ'),
+                children: dataServiceWidgets,
+                // children: fuelWidgets,
+              ),
+            ),
+          ),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ExpansionTile(
                 leading: ShowImage(path: 'images/addfuel.png'),
                 title: Text('เติมน้ำมัน'),
                 children: fuelWidgets,
               ),
+            ),
           ),
+          ElevatedButton(
+            onPressed: () {
+              myNotification();
+            },
+            child: Text('Test Nofication'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> myNotification() async {
+    DateTime notiDateTime = DateTime.now().add(Duration(seconds: 20));
+    AndroidNotificationDetails androidNotificationDetails =
+        AndroidNotificationDetails(
+      'channelId2',
+      'Noti title2',
+      'Noti message2',
+      priority: Priority.high,
+      importance: Importance.max,
+      ticker: 'test',
+    );
+    NotificationDetails notificationDetails =
+        NotificationDetails(android: androidNotificationDetails);
+    await flutterLocalNotificationsPlugin.schedule(
+      1,
+      'Nofi title',
+      'Nofi Message',
+      serviceNotiDateTime,
+      notificationDetails,
     );
   }
 
@@ -160,14 +367,19 @@ class _HistoryState extends State<History> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, '/serviceCar'),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, '/serviceCar').then(
+                        (value) => readAllDataService(),
+                      ),
                   child: Text('บริการ')),
               SizedBox(
                 width: 4,
               ),
               ElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, '/addFuel')
-                      .then((value) => readAllFuel()),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, '/addFuel').then(
+                        (value) => readAllFuel(),
+                      ),
                   child: Text('เติมเชื้อเพลิง')),
               SizedBox(
                 width: 4,
@@ -197,5 +409,51 @@ class _HistoryState extends State<History> {
     DateFormat dateFormat = DateFormat('dd/MM/yyyy');
     String result = dateFormat.format(dataTime);
     return result;
+  }
+
+  Future<void> confirmDeleteService(
+    int indexDataService,
+  ) async {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: ListTile(
+          leading: Icon(
+            Icons.delete,
+            size: 35,
+            color: Colors.red,
+          ),
+          title: Text('ต้องการจะลบ ?'),
+          subtitle: Text(dataServiceModels[indexDataService].typeService),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () async {
+              await FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(uidUser)
+                  .collection('dataService')
+                  .doc(docIdServices[indexDataService])
+                  .delete()
+                  .then((value) {
+                Navigator.pop(context);
+                readAllDataService();
+              });
+            },
+            child: Text(
+              'ลบ',
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(
+              'ยกเลิก',
+              style: TextStyle(color: Colors.green),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

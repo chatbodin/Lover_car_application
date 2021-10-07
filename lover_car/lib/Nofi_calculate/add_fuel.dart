@@ -89,7 +89,7 @@ class _AddFuel_carState extends State<AddFuel_car> {
           if (snapshot.connectionState == ConnectionState.done) {
             return Scaffold(
               appBar: AppBar(
-                title: Text("เติมเชื้อเพลิง"),
+                title: Text("บริการ"),
                 backgroundColor: Colors.purple,
               ),
               body: GestureDetector(
@@ -104,7 +104,7 @@ class _AddFuel_carState extends State<AddFuel_car> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           buildShowTime2(),
-                          buildTitle('น้ำมันเชื้อเพลิง'),
+                          buildTitle('บริการ'),
                           buildDropdown(),
                           buildTitle('ระยะทางที่แสดงบนไมล์/(Km)'),
                           fieldOdometer(),
