@@ -1,5 +1,6 @@
 import 'package:car_lovers/models/datafule_model.dart';
 import 'package:car_lovers/widget_drawer/signout.dart';
+import 'package:car_lovers/widgets/show_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -22,10 +23,14 @@ class _HistoryState extends State<History> {
     // TODO: implement initState
     super.initState();
     findUidUser();
-    readAllFuel();
   }
 
   Future<void> readAllFuel() async {
+    if (dataFuleModels.isNotEmpty) {
+      dataFuleModels.clear();
+      fuelWidgets.clear();
+    }
+
     await FirebaseFirestore.instance
         .collection('users')
         .doc(uidUser)
@@ -34,6 +39,7 @@ class _HistoryState extends State<History> {
         .then((value) {
       for (var item in value.docs) {
         DataFuleModel model = DataFuleModel.fromMap(item.data());
+        print('### uidUser = $uidUser remark ==>${model.remark}');
         setState(() {
           dataFuleModels.add(model);
           fuelWidgets.add(createFuelWidget(model));
@@ -42,7 +48,28 @@ class _HistoryState extends State<History> {
     });
   }
 
-  Widget createFuelWidget(DataFuleModel model) => Text(model.remark);
+  Widget createFuelWidget(DataFuleModel model) => Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                children: [
+                  Text(model.typeFule),
+                  Text('${model.priceAll} บาท'),
+                ],
+              ),
+              Column(
+                children: [
+                  Text(changeTimeToString(model.chooseDate)),
+                  Text('${model.odometer} Km'),
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
 
   Future<void> findUidUser() async {
     // ignore: await_only_futures
@@ -50,6 +77,7 @@ class _HistoryState extends State<History> {
       setState(() {
         uidUser = event.uid;
         load = false;
+        readAllFuel();
       });
     });
   }
@@ -67,10 +95,13 @@ class _HistoryState extends State<History> {
       ),
       body: load
           ? Center(child: CircularProgressIndicator())
-          : ExpansionTile(
-              title: Text('เติมน้ำมัน'),
-              children: fuelWidgets,
-            ),
+          : SingleChildScrollView(
+            child: ExpansionTile(
+                leading: ShowImage(path: 'images/addfuel.png'),
+                title: Text('เติมน้ำมัน'),
+                children: fuelWidgets,
+              ),
+          ),
     );
   }
 
@@ -135,7 +166,8 @@ class _HistoryState extends State<History> {
                 width: 4,
               ),
               ElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, '/addFuel'),
+                  onPressed: () => Navigator.pushNamed(context, '/addFuel')
+                      .then((value) => readAllFuel()),
                   child: Text('เติมเชื้อเพลิง')),
               SizedBox(
                 width: 4,
@@ -157,6 +189,13 @@ class _HistoryState extends State<History> {
 
     DateFormat dateFormat = DateFormat('dd/MM/yyyy');
     String result = dateFormat.format(dateTime);
+    return result;
+  }
+
+  String changeTimeToString(Timestamp chooseDate) {
+    DateTime dataTime = chooseDate.toDate();
+    DateFormat dateFormat = DateFormat('dd/MM/yyyy');
+    String result = dateFormat.format(dataTime);
     return result;
   }
 }

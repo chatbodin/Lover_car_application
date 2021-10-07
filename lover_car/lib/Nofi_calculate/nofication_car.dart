@@ -104,9 +104,9 @@ class _Nofi_carState extends State<Nofi_car> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           buildTitle('ชนิดบริการ'),
-                          buildDropdown(),
+                          // buildDropdown(),
                           buildTitle('ชนิดภาษี'),
-                          buildDropdown(),
+                          // buildDropdown(),
                           buildTitle("หมายเหตุ"),
                           billdRemark(),
                           buttonSave(),
@@ -144,13 +144,13 @@ class _Nofi_carState extends State<Nofi_car> {
                   typeNoficationTax: typeNoficationTax,
                   remark: remarkController.text);
 
-              await FirebaseFirestore.instance
-                  .collection('users')
-                  .doc(uidUser)
-                  .collection('datanofication')
-                  .doc()
-                  .set(model.toMap())
-                  .then((value) => Navigator.pop(context));
+              // await FirebaseFirestore.instance
+              //     .collection('users')
+              //     .doc(uidUser)
+              //     .collection('datanofication')
+              //     .doc()
+              //     .set(model.toMap())
+              //     .then((value) => Navigator.pop(context));
 
               // });
               formKey.currentState.reset();
@@ -170,25 +170,25 @@ class _Nofi_carState extends State<Nofi_car> {
     );
   }
 
-  DropdownButton<String> buildDropdown() {
-    return DropdownButton<String>(
-      onChanged: (value) {
-        setState(() {
-          typeNoficationService = value;
-        });
-      },
-      hint: Text('กรุณาเลือกชนิดบริการ'),
-      value: typeNoficationService,
-      items: typeNoficationService
-          .map(
-            (e) => DropdownMenuItem(
-              child: Text(e),
-              value: e,
-            ),
-          )
-          .toList(),
-    );
-  }
+  // DropdownButton<String> buildDropdown() {
+  //   return DropdownButton<String>(
+  //     onChanged: (value) {
+  //       setState(() {
+  //         typeNoficationService = value;
+  //       });
+  //     },
+  //     hint: Text('กรุณาเลือกชนิดบริการ'),
+  //     value: typeNoficationService,
+  //     items: typeNoficationService
+  //         .map(
+  //           (e) => DropdownMenuItem(
+  //             child: Text(e),
+  //             value: e,
+  //           ),
+  //         )
+  //         .toList(),
+  //   );
+  // }
 
   Container buildTitle(String title) {
     return Container(
