@@ -554,7 +554,7 @@ class _mgChiangraiState extends State<mgChiangrai> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 140,
+                  height: 160,
                   //width: double.infinity,
                   color: Colors.yellow.shade200,
                   child: Column(

@@ -86,7 +86,7 @@ class _suzukiphayaoState extends State<suzukiphayao> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 160,
+                  height: 165,
                   //width: double.infinity,
                   color: Colors.blue.shade200,
                   child: Column(
@@ -195,7 +195,7 @@ class _suzukilampangState extends State<suzukilampang> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 160,
+                  height: 165,
                   //width: double.infinity,
                   color: Colors.red.shade200,
                   child: Column(
@@ -414,7 +414,7 @@ class _suzukiPhraeState extends State<suzukiPhrae> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 160,
+                  height: 165,
                   //width: double.infinity,
                   color: Colors.yellow.shade200,
                   child: Column(
@@ -523,7 +523,7 @@ class _suzukiChiangraiState extends State<suzukiChiangrai> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 160,
+                  height: 165,
                   //width: double.infinity,
                   color: Colors.purple.shade200,
                   child: Column(

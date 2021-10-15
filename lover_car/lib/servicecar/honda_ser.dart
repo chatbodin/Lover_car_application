@@ -216,7 +216,7 @@ class _hondalampangState extends State<hondalampang> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.blue.shade100,
                   child: Column(
@@ -243,7 +243,7 @@ class _hondalampangState extends State<hondalampang> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.red.shade100,
                   child: Column(
@@ -350,7 +350,7 @@ class _hondalamphunState extends State<hondalamphun> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.orange.shade100,
                   child: Column(
@@ -468,7 +468,7 @@ class _hondaphraeState extends State<hondaphrae> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.green.shade100,
                   child: Column(
@@ -495,7 +495,7 @@ class _hondaphraeState extends State<hondaphrae> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.red.shade100,
                   child: Column(
@@ -642,7 +642,7 @@ class _hondachiangraiState extends State<hondachiangrai> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.green.shade100,
                   child: Column(
@@ -669,7 +669,7 @@ class _hondachiangraiState extends State<hondachiangrai> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.red.shade100,
                   child: Column(
@@ -696,7 +696,7 @@ class _hondachiangraiState extends State<hondachiangrai> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.orange.shade200,
                   child: Column(
@@ -723,7 +723,7 @@ class _hondachiangraiState extends State<hondachiangrai> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.blue.shade100,
                   child: Column(
@@ -750,7 +750,7 @@ class _hondachiangraiState extends State<hondachiangrai> {
             ),
             SingleChildScrollView(
               child: Container(
-                  height: 140,
+                  height: 150,
                   width: double.infinity,
                   color: Colors.yellow.shade100,
                   child: Column(

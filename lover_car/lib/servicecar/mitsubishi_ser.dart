@@ -95,7 +95,7 @@ class _mitsubishiphayaoState extends State<mitsubishiphayao> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 140,
+                  height: 160,
                   //width: double.infinity,
                   color: Colors.red.shade100,
                   child: Column(
@@ -123,7 +123,7 @@ class _mitsubishiphayaoState extends State<mitsubishiphayao> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 140,
+                  height: 160,
                   //width: double.infinity,
                   color: Colors.green.shade100,
                   child: Column(
@@ -248,7 +248,7 @@ class _mitsubishilampangState extends State<mitsubishilampang> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 140,
+                  height: 160,
                   //width: double.infinity,
                   color: Colors.red.shade100,
                   child: Column(
@@ -276,7 +276,7 @@ class _mitsubishilampangState extends State<mitsubishilampang> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 140,
+                  height: 160,
                   //width: double.infinity,
                   color: Colors.green.shade100,
                   child: Column(
@@ -304,7 +304,7 @@ class _mitsubishilampangState extends State<mitsubishilampang> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 140,
+                  height: 160,
                   //width: double.infinity,
                   color: Colors.orange.shade100,
                   child: Column(
@@ -413,7 +413,7 @@ class _mitsubishilamphunState extends State<mitsubishilamphun> {
             SingleChildScrollView(
               child: Container(
                   padding: const EdgeInsets.all(5),
-                  height: 140,
+                  height: 160,
                   //width: double.infinity,
                   color: Colors.blue.shade200,
                   child: Column(
