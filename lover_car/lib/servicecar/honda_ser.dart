@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:car_lovers/unit/my_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -6,17 +7,21 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 // ignore: camel_case_types
 class hondaphayao extends StatefulWidget {
+  final String x;
+  final String y;
+
   @override
-  _hondaphayaoState createState() => _hondaphayaoState();
+  hondaphayao(this.x, this.y);
+  createState() => _hondaphayaoState();
 }
 
 // ignore: camel_case_types
 class _hondaphayaoState extends State<hondaphayao> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -35,6 +40,9 @@ class _hondaphayaoState extends State<hondaphayao> {
 
   @override
   void initState() {
+    print(
+        '5555555555555555555555555555555555555555555555555555555555555555555');
+    print(widget.x);
     intilize();
     super.initState();
   }
@@ -47,8 +55,16 @@ class _hondaphayaoState extends State<hondaphayao> {
         icon: BitmapDescriptor.defaultMarkerWithHue(
           BitmapDescriptor.hueBlue,
         ));
+    Marker twoMarker = Marker(
+        markerId: MarkerId('บริษัท พะเยาฮอนด้าคาร์ส์ จำกัด'),
+        position: LatLng(19.14835, 100.91266),
+        infoWindow: InfoWindow(title: 'บริษัท พะเยาฮอนด้าคาร์ส์ จำกัด'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueRed,
+        ));
 
     markers.add(oneMarker);
+    markers.add(twoMarker);
 
     setState(() {});
   }
@@ -56,6 +72,10 @@ class _hondaphayaoState extends State<hondaphayao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฮอนด้าพะเยา'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -116,7 +136,7 @@ class hondalampang extends StatefulWidget {
 // ignore: camel_case_types
 class _hondalampangState extends State<hondalampang> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
   Position currentPostion;
@@ -169,6 +189,10 @@ class _hondalampangState extends State<hondalampang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฮอนด้าลำปาง'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -226,7 +250,7 @@ class _hondalampangState extends State<hondalampang> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'โชว์รูมโตโยต้า (หจก.โตโยต้าเชียงราย)',
+                        'บริษัท เชียงแสงยนตรการ จำกัด',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -256,10 +280,10 @@ class hondalamphun extends StatefulWidget {
 // ignore: camel_case_types
 class _hondalamphunState extends State<hondalamphun> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -299,6 +323,10 @@ class _hondalamphunState extends State<hondalamphun> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฮอนด้าลำพูน'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -359,10 +387,10 @@ class hondaphrae extends StatefulWidget {
 // ignore: camel_case_types
 class _hondaphraeState extends State<hondaphrae> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -413,6 +441,10 @@ class _hondaphraeState extends State<hondaphrae> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฮอนด้าแพร่'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -500,10 +532,10 @@ class hondachiangrai extends StatefulWidget {
 // ignore: camel_case_types
 class _hondachiangraiState extends State<hondachiangrai> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -583,6 +615,10 @@ class _hondachiangraiState extends State<hondachiangrai> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฮอนด้าเชียงราย'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [

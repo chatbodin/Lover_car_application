@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:car_lovers/unit/my_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,10 +14,10 @@ class mitsubishiphayao extends StatefulWidget {
 // ignore: camel_case_types
 class _mitsubishiphayaoState extends State<mitsubishiphayao> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -66,6 +67,10 @@ class _mitsubishiphayaoState extends State<mitsubishiphayao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มิตซูบิชิพะเยา'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -155,10 +160,10 @@ class mitsubishilampang extends StatefulWidget {
 // ignore: camel_case_types
 class _mitsubishilampangState extends State<mitsubishilampang> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -215,6 +220,10 @@ class _mitsubishilampangState extends State<mitsubishilampang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มิตซูบิชิลำปาง'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -255,7 +264,7 @@ class _mitsubishilampangState extends State<mitsubishilampang> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:054366662',
+                        'โทร:054-366-662',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -333,10 +342,10 @@ class mitsubishilamphun extends StatefulWidget {
 // ignore: camel_case_types
 class _mitsubishilamphunState extends State<mitsubishilamphun> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -376,6 +385,10 @@ class _mitsubishilamphunState extends State<mitsubishilamphun> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มิตซูบิชิลำพูน'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -437,10 +450,10 @@ class mitsubishichiangrai extends StatefulWidget {
 // ignore: camel_case_types
 class _mitsubishichiangraiState extends State<mitsubishichiangrai> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -514,6 +527,10 @@ class _mitsubishichiangraiState extends State<mitsubishichiangrai> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มิตซูบิชิเชียงราย'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -582,7 +599,7 @@ class _mitsubishichiangraiState extends State<mitsubishichiangrai> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:053176666',
+                        'โทร:053-176-666',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -610,7 +627,7 @@ class _mitsubishichiangraiState extends State<mitsubishichiangrai> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:053700007',
+                        'โทร:053-700-007',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -638,7 +655,7 @@ class _mitsubishichiangraiState extends State<mitsubishichiangrai> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:053748888',
+                        'โทร:053-748-888',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -666,7 +683,7 @@ class _mitsubishichiangraiState extends State<mitsubishichiangrai> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:053748888',
+                        'โทร:053-748-888',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -687,10 +704,10 @@ class mitsubishiphrae extends StatefulWidget {
 // ignore: camel_case_types
 class _mitsubishiphraeState extends State<mitsubishiphrae> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -730,6 +747,10 @@ class _mitsubishiphraeState extends State<mitsubishiphrae> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มิตซูบิชิแพร่'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -770,7 +791,7 @@ class _mitsubishiphraeState extends State<mitsubishiphrae> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร: 054 625 233',
+                        'โทร: 054-625-233',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],

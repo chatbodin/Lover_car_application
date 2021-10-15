@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:car_lovers/unit/my_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,10 +14,10 @@ class mgphayao extends StatefulWidget {
 // ignore: camel_case_types
 class _mgphayaoState extends State<mgphayao> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -56,6 +57,10 @@ class _mgphayaoState extends State<mgphayao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('เอ็มจีพะเยา'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -118,10 +123,10 @@ class mglampang extends StatefulWidget {
 // ignore: camel_case_types
 class _mglampangState extends State<mglampang> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -146,9 +151,9 @@ class _mglampangState extends State<mglampang> {
 
   intilize() {
     Marker oneMarker = Marker(
-        markerId: MarkerId('บริษัท แพร่ยนตรการ เซลส์ แอนด์ เซอร์วิส จำกัด'),
-        position: LatLng(18.216486636058086, 99.42304563858335),
-        infoWindow: InfoWindow(title: 'บริษัท เอ็มจี ล้านนา จำกัด(สาขาพะเยา)'),
+        markerId: MarkerId('เอ็มจี​ เชียงแสง​ ลำปาง'),
+        position: LatLng(18.25387, 99.45671),
+        infoWindow: InfoWindow(title: 'เอ็มจี​ เชียงแสง​ ลำปาง'),
         icon: BitmapDescriptor.defaultMarkerWithHue(
           BitmapDescriptor.hueGreen,
         ));
@@ -161,6 +166,10 @@ class _mglampangState extends State<mglampang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('เอ็มจีลำปาง'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -192,16 +201,16 @@ class _mglampangState extends State<mglampang> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'บริษัท แพร่ยนตรการ เซลส์ แอนด์ เซอร์วิส จำกัด',
+                        'เอ็มจี​ เชียงแสง​ ลำปาง',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'ที่อยู่:168 หมู่1 ถ.พหลโยธิน ต.ศาลา อ.เกาะคา จ.ลำปาง 52130',
+                        'ที่อยู่:449 หมู่ 1 ต.ชมพู อ.เมือง จ.ลำปาง 52100',
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:054-010-295-6',
+                        'โทร:054-010-424',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -223,10 +232,10 @@ class mglamphun extends StatefulWidget {
 // ignore: camel_case_types
 class _mglamphunState extends State<mglamphun> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -266,6 +275,10 @@ class _mglamphunState extends State<mglamphun> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('เอ็มจีลำพูน'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -327,10 +340,10 @@ class mgPhrae extends StatefulWidget {
 // ignore: camel_case_types
 class _mgPhraeState extends State<mgPhrae> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -370,6 +383,10 @@ class _mgPhraeState extends State<mgPhrae> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('เอ็มจีแพร่'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -431,10 +448,10 @@ class mgChiangrai extends StatefulWidget {
 // ignore: camel_case_types
 class _mgChiangraiState extends State<mgChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -481,6 +498,10 @@ class _mgChiangraiState extends State<mgChiangrai> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('เอ็มจีเชียงราย'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [

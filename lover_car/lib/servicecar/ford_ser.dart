@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:car_lovers/unit/my_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,10 +14,10 @@ class fordphayao extends StatefulWidget {
 // ignore: camel_case_types
 class _fordphayaoState extends State<fordphayao> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -65,6 +66,10 @@ class _fordphayaoState extends State<fordphayao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฟอร์ดพะเยา'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -105,7 +110,7 @@ class _fordphayaoState extends State<fordphayao> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:054413344',
+                        'โทร:054-413-344',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -155,10 +160,10 @@ class fordlampang extends StatefulWidget {
 // ignore: camel_case_types
 class _fordlampangState extends State<fordlampang> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -198,6 +203,10 @@ class _fordlampangState extends State<fordlampang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฟอร์ดลำปาง'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -238,7 +247,7 @@ class _fordlampangState extends State<fordlampang> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:054325999',
+                        'โทร:054-325-999',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -260,10 +269,10 @@ class fordlamphun extends StatefulWidget {
 // ignore: camel_case_types
 class _fordlamphunState extends State<fordlamphun> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -303,6 +312,10 @@ class _fordlamphunState extends State<fordlamphun> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฟอร์ดลำพูน'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -343,7 +356,7 @@ class _fordlamphunState extends State<fordlamphun> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:053983243',
+                        'โทร:053-983-243',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -365,10 +378,10 @@ class fordphrae extends StatefulWidget {
 // ignore: camel_case_types
 class _fordphraeState extends State<fordphrae> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -408,6 +421,10 @@ class _fordphraeState extends State<fordphrae> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฟอร์ดแพร่'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -470,10 +487,10 @@ class fordChiangrai extends StatefulWidget {
 // ignore: camel_case_types
 class _fordChiangraiState extends State<fordChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -522,6 +539,10 @@ class _fordChiangraiState extends State<fordChiangrai> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ฟอร์ดเชียงราย'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -590,7 +611,7 @@ class _fordChiangraiState extends State<fordChiangrai> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:053701400',
+                        'โทร:053-701-400',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],

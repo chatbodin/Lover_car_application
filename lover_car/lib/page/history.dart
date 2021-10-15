@@ -291,6 +291,7 @@ class _HistoryState extends State<History> {
   }
 
   Future<void> myNotification() async {
+    // ignore: unused_local_variable
     DateTime notiDateTime = DateTime.now().add(Duration(seconds: 20));
     AndroidNotificationDetails androidNotificationDetails =
         AndroidNotificationDetails(
@@ -303,6 +304,7 @@ class _HistoryState extends State<History> {
     );
     NotificationDetails notificationDetails =
         NotificationDetails(android: androidNotificationDetails);
+    // ignore: deprecated_member_use
     await flutterLocalNotificationsPlugin.schedule(
       1,
       'Nofi title',

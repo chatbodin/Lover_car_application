@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:car_lovers/unit/my_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,10 +14,10 @@ class suzukiphayao extends StatefulWidget {
 // ignore: camel_case_types
 class _suzukiphayaoState extends State<suzukiphayao> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -57,6 +58,10 @@ class _suzukiphayaoState extends State<suzukiphayao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ซูซูกิพะเยา'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -119,10 +124,10 @@ class suzukilampang extends StatefulWidget {
 // ignore: camel_case_types
 class _suzukilampangState extends State<suzukilampang> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -162,6 +167,10 @@ class _suzukilampangState extends State<suzukilampang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ซูซูกิลำปาง'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -223,10 +232,10 @@ class suzukilamphun extends StatefulWidget {
 // ignore: camel_case_types
 class _suzukilamphunState extends State<suzukilamphun> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -266,6 +275,10 @@ class _suzukilamphunState extends State<suzukilamphun> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ซูซูกิลำพูน'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -297,7 +310,7 @@ class _suzukilamphunState extends State<suzukilamphun> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'บริษัท เขลางค์ ออโตเซลส์ จำกัด',
+                        'บริษัท เจริญออโตเซลส์ จำกัด',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -327,10 +340,10 @@ class suzukiPhrae extends StatefulWidget {
 // ignore: camel_case_types
 class _suzukiPhraeState extends State<suzukiPhrae> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -373,6 +386,10 @@ class _suzukiPhraeState extends State<suzukiPhrae> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ซูซูกิแพร่'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -434,10 +451,10 @@ class suzukiChiangrai extends StatefulWidget {
 // ignore: camel_case_types
 class _suzukiChiangraiState extends State<suzukiChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -478,6 +495,10 @@ class _suzukiChiangraiState extends State<suzukiChiangrai> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('ซูซูกิเชียงราย'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [

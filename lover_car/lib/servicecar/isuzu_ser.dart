@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:car_lovers/unit/my_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,10 +14,10 @@ class isuzuphayao extends StatefulWidget {
 // ignore: camel_case_types
 class _isuzuphayaoState extends State<isuzuphayao> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -65,6 +66,10 @@ class _isuzuphayaoState extends State<isuzuphayao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('อีซูซุพะเยา'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -155,7 +160,7 @@ class isuzulampang extends StatefulWidget {
 // ignore: camel_case_types
 class _isuzulampangState extends State<isuzulampang> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
   Position currentPostion;
@@ -233,6 +238,10 @@ class _isuzulampangState extends State<isuzulampang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('อีซูซุลำปาง'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -407,10 +416,10 @@ class isuzulamphun extends StatefulWidget {
 // ignore: camel_case_types
 class _isuzulamphunState extends State<isuzulamphun> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -451,6 +460,10 @@ class _isuzulamphunState extends State<isuzulamphun> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('อีซูซุลำพูน'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -512,10 +525,10 @@ class isuzuphrae extends StatefulWidget {
 // ignore: camel_case_types
 class _isuzuphraeState extends State<isuzuphrae> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -555,6 +568,10 @@ class _isuzuphraeState extends State<isuzuphrae> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('อีซูซุแพร่'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -586,7 +603,7 @@ class _isuzuphraeState extends State<isuzuphrae> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'บริษัท ธาราลำพูนอีซูซุเซลส์ จำกัด(สาขาลำพูน)',
+                        'บริษัท อีซูซุแพร่ จำกัด',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -595,7 +612,7 @@ class _isuzuphraeState extends State<isuzuphrae> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:054534236',
+                        'โทร:054-531-788',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -616,10 +633,10 @@ class isuzuchiangrai extends StatefulWidget {
 // ignore: camel_case_types
 class _isuzuchiangraiState extends State<isuzuchiangrai> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -734,6 +751,10 @@ class _isuzuchiangraiState extends State<isuzuchiangrai> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('อีซูซุเชียงราย'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: SingleChildScrollView(
           child: Column(
@@ -991,6 +1012,5 @@ class _isuzuchiangraiState extends State<isuzuchiangrai> {
           ),
         ));
     // ignore: dead_code
-  
   }
 }

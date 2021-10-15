@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:car_lovers/unit/my_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,10 +14,10 @@ class nissanphayao extends StatefulWidget {
 // ignore: camel_case_types
 class _nissanphayaoState extends State<nissanphayao> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -65,6 +66,10 @@ class _nissanphayaoState extends State<nissanphayao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('นิสสันพะเยา'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -105,7 +110,7 @@ class _nissanphayaoState extends State<nissanphayao> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:054482900',
+                        'โทร:054-482-900',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -133,7 +138,7 @@ class _nissanphayaoState extends State<nissanphayao> {
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        'โทร:054451850',
+                        'โทร:054-451-850',
                         style: TextStyle(fontSize: 16),
                       ),
                     ],
@@ -154,10 +159,10 @@ class nissanlampang extends StatefulWidget {
 // ignore: camel_case_types
 class _nissanlampangState extends State<nissanlampang> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -197,6 +202,10 @@ class _nissanlampangState extends State<nissanlampang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('นิสสันลำปาง'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -257,10 +266,10 @@ class nissanlamphun extends StatefulWidget {
 // ignore: camel_case_types
 class _nissanlamphunState extends State<nissanlamphun> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -300,6 +309,10 @@ class _nissanlamphunState extends State<nissanlamphun> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('นิสสันลำพูน'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -362,10 +375,10 @@ class nissanPhrae extends StatefulWidget {
 // ignore: camel_case_types
 class _nissanPhraeState extends State<nissanPhrae> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -405,6 +418,10 @@ class _nissanPhraeState extends State<nissanPhrae> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('นิสสันแพร่'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -466,10 +483,10 @@ class nissanChiangrai extends StatefulWidget {
 // ignore: camel_case_types
 class _nissanChiangraiState extends State<nissanChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -535,6 +552,10 @@ class _nissanChiangraiState extends State<nissanChiangrai> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('นิสสันเชียงราย'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [

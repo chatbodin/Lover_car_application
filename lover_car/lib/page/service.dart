@@ -1,7 +1,14 @@
+import 'package:car_lovers/servicecar/ford_ser.dart';
+import 'package:car_lovers/servicecar/honda_ser.dart';
+import 'package:car_lovers/servicecar/isuzu_ser.dart';
+import 'package:car_lovers/servicecar/mazda_ser.dart';
+import 'package:car_lovers/servicecar/mg_ser.dart';
+import 'package:car_lovers/servicecar/mitsubishi_ser.dart';
+import 'package:car_lovers/servicecar/nissan_ser.dart';
+import 'package:car_lovers/servicecar/suzuki_ser.dart';
+import 'package:car_lovers/servicecar/toyota_ser.dart';
 import 'package:flutter/material.dart';
 import 'package:car_lovers/widget_drawer/signout.dart';
-
-
 
 class Sercar extends StatefulWidget {
   @override
@@ -122,7 +129,7 @@ class _SercarState extends State<Sercar> {
                 child: Text(value),
               );
             }).toList(),
-            onChanged: (typecars) {
+            onChanged: (String typecars) {
               if (typecars == 'Toyota') {
                 providers = Toyotaprovince;
               } else if (typecars == 'Honda') {
@@ -164,10 +171,372 @@ class _SercarState extends State<Sercar> {
               );
             }).toList(),
             onChanged: (providers) {
-              setState(() {
-                selectedprovince = providers;
-                
-              });
+              if (providers == 'Lampang') {
+                if (selectedtypecar == 'Honda') {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => hondalampang(),
+                      ));
+                }
+              }
+              if (providers == 'Phayao') {
+                if (selectedtypecar == 'Honda') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => hondaphayao(providers, "honda")),
+                  );
+                }
+              }
+              if (providers == 'Lamphun') {
+                if (selectedtypecar == 'Honda') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => hondalamphun()),
+                  );
+                }
+              }
+              if (providers == 'Phrae') {
+                if (selectedtypecar == 'Honda') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => hondaphrae()),
+                  );
+                }
+              }
+              if (providers == 'ChiangRai') {
+                if (selectedtypecar == 'Honda') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => hondachiangrai()),
+                  );
+                }
+              }
+              if (providers == 'Phayao') {
+                if (selectedtypecar == 'Toyota') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => toyotaserphayao()),
+                  );
+                }
+              }
+              if (providers == 'Lampang') {
+                if (selectedtypecar == 'Toyota') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => toyotaserlampang()),
+                  );
+                }
+              }
+              if (providers == 'Lamphun') {
+                if (selectedtypecar == 'Toyota') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => toyotaserlamphun()),
+                  );
+                }
+              }
+              if (providers == 'Phrae') {
+                if (selectedtypecar == 'Toyota') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => toyotaserPhrae()),
+                  );
+                }
+              }
+              if (providers == 'ChiangRai') {
+                if (selectedtypecar == 'Toyota') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => toyotaseChiangrai()),
+                  );
+                }
+              }
+              if (providers == 'Phayao') {
+                if (selectedtypecar == 'Isuzu') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => isuzuphayao()),
+                  );
+                }
+              }
+              if (providers == 'Lampang') {
+                if (selectedtypecar == 'Isuzu') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => isuzulampang()),
+                  );
+                }
+              }
+              if (providers == 'Lamphun') {
+                if (selectedtypecar == 'Isuzu') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => isuzulamphun()),
+                  );
+                }
+              }
+              if (providers == 'Phrae') {
+                if (selectedtypecar == 'Isuzu') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => isuzuphrae()),
+                  );
+                }
+              }
+              if (providers == 'ChiangRai') {
+                if (selectedtypecar == 'Isuzu') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => isuzuchiangrai()),
+                  );
+                }
+              }
+              if (providers == 'Phayao') {
+                if (selectedtypecar == 'Suzuki') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => suzukiphayao()),
+                  );
+                }
+              }
+              if (providers == 'Lampang') {
+                if (selectedtypecar == 'Suzuki') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => suzukilampang()),
+                  );
+                }
+              }
+              if (providers == 'Lamphun') {
+                if (selectedtypecar == 'Suzuki') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => suzukilamphun()),
+                  );
+                }
+              }
+              if (providers == 'Phrae') {
+                if (selectedtypecar == 'Suzuki') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => suzukiPhrae()),
+                  );
+                }
+              }
+              if (providers == 'ChiangRai') {
+                if (selectedtypecar == 'Suzuki') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => suzukiChiangrai()),
+                  );
+                }
+              }
+              if (providers == 'Phayao') {
+                if (selectedtypecar == 'Mg') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mgphayao()),
+                  );
+                }
+              }
+              if (providers == 'Lampang') {
+                if (selectedtypecar == 'Mg') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mglampang()),
+                  );
+                }
+              }
+              if (providers == 'Lamphun') {
+                if (selectedtypecar == 'Mg') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mglamphun()),
+                  );
+                }
+              }
+              if (providers == 'Phrae') {
+                if (selectedtypecar == 'Mg') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mgPhrae()),
+                  );
+                }
+              }
+              if (providers == 'ChiangRai') {
+                if (selectedtypecar == 'Mg') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mgChiangrai()),
+                  );
+                }
+              }
+              if (providers == 'Phayao') {
+                if (selectedtypecar == 'Mitsubishi') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mitsubishiphayao()),
+                  );
+                }
+              }
+              if (providers == 'Lampang') {
+                if (selectedtypecar == 'Mitsubishi') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => mitsubishilampang()),
+                  );
+                }
+              }
+              if (providers == 'Lamphun') {
+                if (selectedtypecar == 'Mitsubishi') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => mitsubishilamphun()),
+                  );
+                }
+              }
+              if (providers == 'Phrae') {
+                if (selectedtypecar == 'Mitsubishi') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mitsubishiphrae()),
+                  );
+                }
+              }
+              if (providers == 'ChiangRai') {
+                if (selectedtypecar == 'Mitsubishi') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => mitsubishichiangrai()),
+                  );
+                }
+              }
+              if (providers == 'Phayao') {
+                if (selectedtypecar == 'Ford') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => fordphayao()),
+                  );
+                }
+              }
+              if (providers == 'Lampang') {
+                if (selectedtypecar == 'Ford') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => fordlampang()),
+                  );
+                }
+              }
+              if (providers == 'Lamphun') {
+                if (selectedtypecar == 'Ford') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => fordlamphun()),
+                  );
+                }
+              }
+              if (providers == 'Phrae') {
+                if (selectedtypecar == 'Ford') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => fordphrae()),
+                  );
+                }
+              }
+              if (providers == 'ChiangRai') {
+                if (selectedtypecar == 'Ford') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => fordChiangrai()),
+                  );
+                }
+              }
+              if (providers == 'Phayao') {
+                if (selectedtypecar == 'Nissan') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => nissanphayao()),
+                  );
+                }
+              }
+              if (providers == 'Lampang') {
+                if (selectedtypecar == 'Nissan') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => nissanlampang()),
+                  );
+                }
+              }
+              if (providers == 'Lamphun') {
+                if (selectedtypecar == 'Nissan') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => nissanlamphun()),
+                  );
+                }
+              }
+              if (providers == 'Phrae') {
+                if (selectedtypecar == 'Nissan') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => nissanPhrae()),
+                  );
+                }
+              }
+              if (providers == 'ChiangRai') {
+                if (selectedtypecar == 'Nissan') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => nissanChiangrai()),
+                  );
+                }
+              }
+              if (providers == 'Phayao') {
+                if (selectedtypecar == 'Mazda') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mazdaphayao()),
+                  );
+                }
+              }
+              if (providers == 'Lampang') {
+                if (selectedtypecar == 'Mazda') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mazdalampang()),
+                  );
+                }
+              }
+              if (providers == 'Lamphun') {
+                if (selectedtypecar == 'Mazda') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mazdalamphun()),
+                  );
+                }
+              }
+              if (providers == 'Phrae') {
+                if (selectedtypecar == 'Mazda') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mazdaphrae()),
+                  );
+                }
+              }
+              if (providers == 'ChiangRai') {
+                if (selectedtypecar == 'Mazda') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => mazdaChiangrai()),
+                  );
+                }
+              }
             },
           ),
         ],

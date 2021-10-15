@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:car_lovers/unit/my_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -13,10 +14,10 @@ class mazdaphayao extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdaphayaoState extends State<mazdaphayao> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -56,6 +57,10 @@ class _mazdaphayaoState extends State<mazdaphayao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มาสด้าพะเยา'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -118,10 +123,10 @@ class mazdalampang extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdalampangState extends State<mazdalampang> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -163,6 +168,10 @@ class _mazdalampangState extends State<mazdalampang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มาสด้าลำปาง'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -225,10 +234,10 @@ class mazdalamphun extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdalamphunState extends State<mazdalamphun> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -269,6 +278,10 @@ class _mazdalamphunState extends State<mazdalamphun> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มาสด้าลำพูน'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -331,10 +344,10 @@ class mazdaphrae extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdaphraeState extends State<mazdaphrae> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -375,6 +388,10 @@ class _mazdaphraeState extends State<mazdaphrae> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มาสด้าแพร่'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
@@ -406,12 +423,12 @@ class _mazdaphraeState extends State<mazdaphrae> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'บริษัท วี กรุ๊ป พี เอ็น ออโตเซลส์ จำกัด',
+                        'บริษัท วี กรุ๊ป พี เอ็น ออโตเซลส์ จำกัด แพร่',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'ที่อยู่:บริษัท วี กรุ๊ป พี เอ็น ออโตเซลส์ จำกัด',
+                        'ที่อยู่:57/6 หมู่1 ต.เวียงทอง อ.สูงเม่น จ.แพร่ 54000',
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
@@ -437,10 +454,10 @@ class mazdaChiangrai extends StatefulWidget {
 // ignore: camel_case_types
 class _mazdaChiangraiState extends State<mazdaChiangrai> {
   Completer<GoogleMapController> _controller = Completer();
-   GoogleMapController newGoogleMapController;
+  GoogleMapController newGoogleMapController;
   List<Marker> markers = [];
 
-   Position currentPostion;
+  Position currentPostion;
   var geoLocator = Geolocator();
   void locatePositon() async {
     Position position = await Geolocator.getCurrentPosition(
@@ -490,6 +507,10 @@ class _mazdaChiangraiState extends State<mazdaChiangrai> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('มาสด้าเชียงราย'),
+          backgroundColor: Mystyle().primaryColor,
+        ),
         backgroundColor: Colors.grey.shade100,
         body: ListView(
           children: [
