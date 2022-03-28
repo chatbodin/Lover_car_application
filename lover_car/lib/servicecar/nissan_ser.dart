@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import
+
 import 'dart:async';
 import 'package:car_lovers/unit/my_style.dart';
 import 'package:flutter/cupertino.dart';

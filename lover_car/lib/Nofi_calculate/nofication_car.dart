@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import
+
 import 'dart:ffi';
 import 'dart:ui';
 
@@ -89,8 +91,8 @@ class _Nofi_carState extends State<Nofi_car> {
           if (snapshot.connectionState == ConnectionState.done) {
             return Scaffold(
               appBar: AppBar(
-                title: Text("เติมเชื้อเพลิง"),
-                backgroundColor: Colors.purple,
+                title: Text("แจ้งเตือน"),
+                backgroundColor: Colors.orange.shade700,
               ),
               body: GestureDetector(
                 onTap: () => FocusScope.of(context).requestFocus(FocusNode()),

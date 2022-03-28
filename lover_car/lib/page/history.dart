@@ -1,14 +1,18 @@
-// ignore: unused_import
+// ignore_for_file: unused_import, non_constant_identifier_names, unnecessary_import, await_only_futures, duplicate_ignore
+
 import 'dart:ffi';
-// ignore: unused_import
+
 import 'dart:ui';
+import 'package:car_lovers/Nofi_calculate/add_fuel.dart';
 import 'package:car_lovers/models/datafule_model.dart';
 import 'package:car_lovers/models/dataservice_model.dart';
+import 'package:car_lovers/page/edit_addfuel.dart';
 import 'package:car_lovers/page/edit_service.dart';
 import 'package:car_lovers/widget_drawer/signout.dart';
 import 'package:car_lovers/widgets/show_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
@@ -78,19 +82,21 @@ class _HistoryState extends State<History> {
         .collection('dataFuel')
         .get()
         .then((value) {
+      int indexDataAddFuel = 0;
       for (var item in value.docs) {
         DataFuleModel model = DataFuleModel.fromMap(item.data());
         print('### uidUser = $uidUser remark ==>${model.remark}');
         setState(() {
           dataFuleModels.add(model);
-          fuelWidgets.add(createFuelWidget(model));
+          fuelWidgets.add(createFuelWidget(model, indexDataAddFuel));
           docIdFuels.add(item.id);
         });
+        indexDataAddFuel++;
       }
     });
   }
 
-  Widget createFuelWidget(DataFuleModel model) => Card(
+  Widget createFuelWidget(DataFuleModel model, int indexDataAddFuel) => Card(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -111,14 +117,26 @@ class _HistoryState extends State<History> {
               Column(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EditAddFuel(
+                          docId: docIdFuels[indexDataAddFuel],
+                          uidUser: uidUser,
+                        ),
+                      ),
+                    ).then((value) => readAllFuel()),
                     icon: Icon(
                       Icons.edit,
                       color: Colors.green,
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print(
+                          '### You Delete indexDataAddFuel ==> $indexDataAddFuel');
+                      confirmDeleteAddFuel(indexDataAddFuel);
+                    },
                     icon: Icon(
                       Icons.delete,
                       color: Colors.red,
@@ -242,7 +260,15 @@ class _HistoryState extends State<History> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: navigatorGroup(context),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(context: context, builder: builderActionsheet);
+        },
+        child: const Icon(
+          Icons.add_rounded,
+          size: 30,
+        ),
+      ),
       appBar: AppBar(
         title: Text('ประวัติการใช้งาน'),
         backgroundColor: Colors.blue.shade800,
@@ -359,43 +385,43 @@ class _HistoryState extends State<History> {
     );
   }
 
-  Row navigatorGroup(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ElevatedButton(
-                  onPressed: () =>
-                      Navigator.pushNamed(context, '/serviceCar').then(
-                        (value) => readAllDataService(),
-                      ),
-                  child: Text('บริการ')),
-              SizedBox(
-                width: 4,
-              ),
-              ElevatedButton(
-                  onPressed: () =>
-                      Navigator.pushNamed(context, '/addFuel').then(
-                        (value) => readAllFuel(),
-                      ),
-                  child: Text('เติมเชื้อเพลิง')),
-              SizedBox(
-                width: 4,
-              ),
-              ElevatedButton(
-                  onPressed: () =>
-                      Navigator.pushNamed(context, '/noficationCar'),
-                  child: Text('แจ้งเตือน')),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
+  // Row FloatingActionButton(BuildContext context) {
+  //   return Row(
+  //     mainAxisAlignment: MainAxisAlignment.center,
+  //     children: [
+  //       Container(
+  //         margin: EdgeInsets.symmetric(horizontal: 16),
+  //         child: Row(
+  //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //           children: [
+  //             ElevatedButton(
+  //                 onPressed: () =>
+  //                     Navigator.pushNamed(context, '/serviceCar').then(
+  //                       (value) => readAllDataService(),
+  //                     ),
+  //                 child: Text('บริการ')),
+  //             SizedBox(
+  //               width: 4,
+  //             ),
+  //             ElevatedButton(
+  //                 onPressed: () =>
+  //                     Navigator.pushNamed(context, '/addFuel').then(
+  //                       (value) => readAllFuel(),
+  //                     ),
+  //                 child: Text('เติมเชื้อเพลิง')),
+  //             SizedBox(
+  //               width: 4,
+  //             ),
+  //             ElevatedButton(
+  //                 onPressed: () =>
+  //                     Navigator.pushNamed(context, '/noficationCar'),
+  //                 child: Text('แจ้งเตือน')),
+  //           ],
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   String showDateTime(document) {
     Timestamp timestamp = document;
@@ -440,6 +466,142 @@ class _HistoryState extends State<History> {
                   .then((value) {
                 Navigator.pop(context);
                 readAllDataService();
+              });
+            },
+            child: Text(
+              'ลบ',
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(
+              'ยกเลิก',
+              style: TextStyle(color: Colors.green),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget builderActionsheet(BuildContext context) => GestureDetector(
+        child: Container(
+          height: 180,
+          child: ListView(
+            children: [
+              Container(
+                height: 50,
+                child: CupertinoActionSheetAction(
+                  child: Row(
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.only(left: 8),
+                          child: Image.asset('images/servicecar.png')),
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 14),
+                          child: Text(
+                            'บริการ',
+                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, '/serviceCar').then(
+                    (value) => readAllDataService(),
+                  ),
+                ),
+              ),
+              Container(
+                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  child: Divider(color: Color(0xFFD1DDE2))),
+              Container(
+                height: 50,
+                child: CupertinoActionSheetAction(
+                  child: Row(
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.only(left: 8),
+                          child: Image.asset('images/addfuel.png')),
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 14),
+                          child: Text(
+                            'เติมเชื้อเพลิง',
+                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, '/addFuel').then(
+                    (value) => readAllFuel(),
+                  ),
+                ),
+              ),
+              Container(
+                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  child: Divider(color: Color(0xFFD1DDE2))),
+              Container(
+                height: 50,
+                child: CupertinoActionSheetAction(
+                  child: Row(
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.only(left: 8),
+                          child: Image.asset('images/remider.png')),
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 14),
+                          child: Text(
+                            'แจ้งเตือน',
+                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, '/noficationCar'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+
+  Future<void> confirmDeleteAddFuel(
+    int indexDataAddFuel,
+  ) async {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: ListTile(
+          leading: Icon(
+            Icons.delete,
+            size: 36,
+            color: Colors.red,
+          ),
+          title: Text('ต้องการจะลบ ?'),
+          subtitle: Text(dataFuleModels[indexDataAddFuel].typeFule),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () async {
+              // Navigator.pop(context);
+              await FirebaseFirestore.instance
+                  .collection('users')
+                  .doc(uidUser)
+                  .collection('dataFuel')
+                  .doc(docIdFuels[indexDataAddFuel])
+                  .delete()
+                  .then((value) {
+                Navigator.pop(context);
+                readAllFuel();
               });
             },
             child: Text(

@@ -1,8 +1,11 @@
+// ignore_for_file: unnecessary_import
+
 import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:car_lovers/models/datafule_model.dart';
 import 'package:car_lovers/models/user_model.dart';
+import 'package:car_lovers/unit/dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -89,7 +92,7 @@ class _AddFuel_carState extends State<AddFuel_car> {
           if (snapshot.connectionState == ConnectionState.done) {
             return Scaffold(
               appBar: AppBar(
-                title: Text("บริการ"),
+                title: Text("เติมเชื้อเพลิง"),
                 backgroundColor: Colors.purple,
               ),
               body: GestureDetector(
@@ -145,35 +148,28 @@ class _AddFuel_carState extends State<AddFuel_car> {
 
               Timestamp timestamp = Timestamp.fromDate(dateTime);
 
-              DataFuleModel model = DataFuleModel(
-                  chooseDate: timestamp,
-                  typeFule: typeFuel,
-                  odometer: int.parse(odometerController.text),
-                  pricePerLit: double.parse(priceController.text),
-                  priceAll: int.parse(priceController.text),
-                  lit: double.parse(lit),
-                  remark: remarkController.text);
+              if (typeFuel != null) {
+                DataFuleModel model = DataFuleModel(
+                    chooseDate: timestamp,
+                    typeFule: typeFuel,
+                    odometer: int.parse(odometerController.text),
+                    pricePerLit: double.parse(priceController.text),
+                    priceAll: int.parse(priceController.text),
+                    lit: double.parse(lit),
+                    remark: remarkController.text);
 
-              await FirebaseFirestore.instance
-                  .collection('users')
-                  .doc(uidUser)
-                  .collection('dataFuel')
-                  .doc()
-                  .set(model.toMap())
-                  .then((value) => Navigator.pop(context));
-
-              //การ Insert Dataแบบเก่า
-              // await _datadataFuelCollection.add({
-              //   "odometer": dataFuel.odometer,
-              //   "price": dataFuel.price,
-              //   "alldistance": dataFuel.alldistance,
-              //   "summary": dataFuel.summary,
-              //   "ratefuel": dataFuel.ratefuel,
-              //   "notes": dataFuel.notes,
-              //   "chooseDate": timestamp,
-              //   "uidUser": uidUser,
-              // });
-              formKey.currentState.reset();
+                await FirebaseFirestore.instance
+                    .collection('users')
+                    .doc(uidUser)
+                    .collection('dataFuel')
+                    .doc()
+                    .set(model.toMap())
+                    .then((value) => Navigator.pop(context));
+                formKey.currentState.reset();
+              } else {
+                normalDialog(context, 'ยังไม่ได้เลือกชนิดเชื้อเพลิง',
+                    'กรุณาเลือกชนิดเชื้อเพลิง');
+              }
             }
           }),
     );

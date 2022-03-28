@@ -1,3 +1,7 @@
+// ignore_for_file: unnecessary_import
+
+import 'dart:ui';
+
 import 'package:car_lovers/models/dataservice_model.dart';
 import 'package:car_lovers/unit/dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -95,24 +99,65 @@ class _EditServiceState extends State<EditService> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Service'),
+        title: Text('แก้ไขบริการ'),
       ),
       body: load
-          ? Center(child: CircularProgressIndicator())
+          ? Container(child: CircularProgressIndicator())
           : SingleChildScrollView(
               child: GestureDetector(
                 onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
                 behavior: HitTestBehavior.opaque,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    buildCalendar(),
-                    dropDownTypeService(),
-                    fieldOdometer(),
-                    fieldPrice(),
-                    fieldRemark(),
-                    buttonEdit()
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Card(
+                          child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: buildCalendar(),
+                      )),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text('กรุณาเลือกชนิดบริการ',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold)),
+                      dropDownTypeService(),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text('ระยะทางที่แสดงบนไมล์/(Km)',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold)),
+                      fieldOdometer(),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text('ค่าบริการ',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold)),
+                      fieldPrice(),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        'หมายเหตุ',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      fieldRemark(),
+                      buttonEdit()
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -125,7 +170,8 @@ class _EditServiceState extends State<EditService> {
       children: [
         Container(
             margin: EdgeInsets.only(top: 16),
-            width: 250,
+            width: 360,
+            height: 35,
             child: ElevatedButton(
                 onPressed: () async {
                   if (nonChange) {
@@ -143,18 +189,20 @@ class _EditServiceState extends State<EditService> {
                         .then((value) => Navigator.pop(context));
                   }
                 },
-                child: Text('Edit'))),
+                child: Text(
+                  'แก้ไข',
+                  style: TextStyle(fontSize: 20),
+                ))),
       ],
     );
   }
 
-  Row fieldOdometer() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+  Column fieldOdometer() {
+    return Column(
       children: [
         Container(
           margin: EdgeInsets.only(top: 16),
-          width: 250,
+          width: 360,
           child: TextFormField(
             onChanged: (value) {
               nonChange = false;
@@ -165,7 +213,7 @@ class _EditServiceState extends State<EditService> {
             keyboardType: TextInputType.number,
             controller: odometerController,
             decoration: InputDecoration(
-              labelText: 'ระยะไมล์ :',
+              //labelText: 'ระยะไมล์ :',
               border: OutlineInputBorder(),
             ),
           ),
@@ -174,13 +222,12 @@ class _EditServiceState extends State<EditService> {
     );
   }
 
-  Row fieldPrice() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+  Column fieldPrice() {
+    return Column(
       children: [
         Container(
           margin: EdgeInsets.only(top: 16),
-          width: 250,
+          width: 360,
           child: TextFormField(
             onChanged: (value) {
               nonChange = false;
@@ -191,7 +238,7 @@ class _EditServiceState extends State<EditService> {
             keyboardType: TextInputType.number,
             controller: priceController,
             decoration: InputDecoration(
-              labelText: 'ค่าใช้จ่าย :',
+              // labelText: 'ค่าใช้จ่าย :',
               border: OutlineInputBorder(),
             ),
           ),
@@ -200,13 +247,13 @@ class _EditServiceState extends State<EditService> {
     );
   }
 
-  Row fieldRemark() {
-    return Row(
+  Column fieldRemark() {
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           margin: EdgeInsets.only(top: 16),
-          width: 250,
+          width: 360,
           child: TextFormField(
             onChanged: (value) {
               nonChange = false;
@@ -215,7 +262,7 @@ class _EditServiceState extends State<EditService> {
             keyboardType: TextInputType.text,
             controller: remarkController,
             decoration: InputDecoration(
-              labelText: 'หมายเหตุ :',
+              //labelText: 'หมายเหตุ :',
               border: OutlineInputBorder(),
             ),
           ),
@@ -226,8 +273,13 @@ class _EditServiceState extends State<EditService> {
 
   ListTile buildCalendar() {
     return ListTile(
-      title: Text(chooseDateStr),
-      trailing: IconButton(
+      title: Text(
+        'วัน /เดือน /ปี',
+        style: TextStyle(fontSize: 18),
+      ),
+      //subtitle: Text(chooseDateStr),
+      subtitle: Text(chooseDateStr, style: TextStyle(fontSize: 18)),
+      leading: IconButton(
           onPressed: () async {
             await showDatePicker(
                     context: context,
@@ -247,7 +299,10 @@ class _EditServiceState extends State<EditService> {
                       })
                     });
           },
-          icon: Icon(Icons.calendar_today)),
+          icon: Icon(
+            Icons.calendar_today,
+            size: 36,
+          )),
     );
   }
 
@@ -260,7 +315,7 @@ class _EditServiceState extends State<EditService> {
           map['typeService'] = typeService;
         });
       },
-      hint: Text('TypeService'),
+      hint: Text('กรุณาเลือกชนิดของบริการ'),
       value: typeService,
       items: typeServices
           .map(

@@ -72,7 +72,7 @@ class DataFuleModel {
 
   @override
   String toString() {
-    return 'DataFuleModel(chooseDate: $chooseDate, typeFule: $typeFule, odometer: $odometer, pricePerLit: $pricePerLit, priceAll: $priceAll, lit: $lit, remark: $remark)';
+    return 'DataFuleModel(chooseDate: $chooseDate, typeFule: $typeFule, odometer: $odometer, pricePerLit: $pricePerLit, priceAll: $priceAll, lit: $lit, remark: $remark,)';
   }
 
   @override
